@@ -96,3 +96,4 @@ export function registerK8sCommands(program) {
       }
     });
 }
+

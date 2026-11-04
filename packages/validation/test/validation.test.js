@@ -46,3 +46,4 @@ describe("@omniops/validation Unit Tests", () => {
     expect(parsed.severity).toBe("SEV-2");
   });
 });
+

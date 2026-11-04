@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
-import { Lock, Mail, AlertCircle, ArrowRight, Loader2 } from "lucide-react";
+import { Lock, Mail, AlertCircle } from "lucide-react";
+import { Card, Button, Input } from "../components/ui/index.js";
 
 export function LoginPage() {
   const [email, setEmail] = useState("");
@@ -32,11 +33,11 @@ export function LoginPage() {
 
   return (
     <div className="min-h-[calc(100vh-8rem)] flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-md p-8 rounded-2xl bg-surface-container border border-surface-container-high shadow-2xl text-left">
+      <Card accent="cyan" className="w-full max-w-md p-8 shadow-2xl text-left">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center text-primary mx-auto mb-3">
-            <span className="material-symbols-outlined text-[24px]">hub</span>
+          <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary mx-auto mb-3 shadow-hud-cyan">
+            <span className="material-symbols-outlined text-[28px]">hub</span>
           </div>
           <h1 className="text-2xl font-bold text-on-surface tracking-tight">Sign in to OmniOPS</h1>
           <p className="text-xs text-on-surface-variant font-mono mt-1">Control Plane Authentication</p>
@@ -55,14 +56,15 @@ export function LoginPage() {
               EMAIL ADDRESS
             </label>
             <div className="relative">
-              <Mail className="w-4 h-4 text-outline absolute left-3 top-3" />
-              <input
+              <Mail className="w-4 h-4 text-outline absolute left-3 top-3 pointer-events-none" />
+              <Input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="developer@company.com"
-                className="w-full pl-9 pr-3 py-2 rounded bg-surface-container-lowest border border-surface-container-high text-on-surface text-sm focus:outline-none focus:border-primary transition-colors font-mono"
+                mono
+                className="pl-9 pr-3 py-2 text-sm"
               />
             </div>
           </div>
@@ -75,25 +77,27 @@ export function LoginPage() {
               <a href="#" className="text-xs text-primary hover:underline font-mono">Forgot?</a>
             </div>
             <div className="relative">
-              <Lock className="w-4 h-4 text-outline absolute left-3 top-3" />
-              <input
+              <Lock className="w-4 h-4 text-outline absolute left-3 top-3 pointer-events-none" />
+              <Input
                 type="password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••••••"
-                className="w-full pl-9 pr-3 py-2 rounded bg-surface-container-lowest border border-surface-container-high text-on-surface text-sm focus:outline-none focus:border-primary transition-colors font-mono"
+                mono
+                className="pl-9 pr-3 py-2 text-sm"
               />
             </div>
           </div>
 
-          <button
+          <Button
             type="submit"
-            disabled={loading}
-            className="w-full py-2.5 bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-semibold text-sm rounded shadow-hud-cyan transition-all flex items-center justify-center gap-2 mt-2 disabled:opacity-50"
+            variant="primary"
+            loading={loading}
+            className="w-full py-2.5 mt-2 font-semibold text-sm"
           >
-            {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <span>Sign In</span>}
-          </button>
+            Sign In
+          </Button>
         </form>
 
         <div className="mt-6 pt-6 border-t border-surface-container-high text-center text-xs text-on-surface-variant">
@@ -102,7 +106,7 @@ export function LoginPage() {
             Create an organization
           </Link>
         </div>
-      </div>
+      </Card>
     </div>
   );
 }

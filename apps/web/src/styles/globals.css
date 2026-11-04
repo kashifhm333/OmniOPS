@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 @layer base {
-  /* LIGHT MODE VARIABLES */
+  /* LIGHT MODE VARIABLES (Authoritative Reference: UI/light) */
   :root {
-    --surface: #ffffff;
-    --surface-dim: #f8fafc;
+    --surface: #f8fafc;
+    --surface-dim: #f1f5f9;
     --surface-bright: #ffffff;
-    --surface-container-lowest: #f8fafc;
-    --surface-container-low: #f1f5f9;
+    --surface-container-lowest: #ffffff;
+    --surface-container-low: #f8fafc;
     --surface-container: #ffffff;
-    --surface-container-high: #e2e8f0;
-    --surface-container-highest: #cbd5e1;
+    --surface-container-high: #f1f5f9;
+    --surface-container-highest: #e2e8f0;
 
     --on-surface: #0f172a;
-    --on-surface-variant: #475569;
+    --on-surface-variant: #334155;
     --inverse-surface: #0f131c;
     --inverse-on-surface: #dfe2ee;
 
@@ -25,22 +25,22 @@
     --on-primary-container: #ffffff;
 
     --secondary: #059669;
-    --secondary-container: #059669;
-    --on-secondary: #ffffff;
+    --secondary-container: #d1fae5;
+    --on-secondary: #065f46;
 
-    --tertiary: #7c3aed;
-    --tertiary-container: #7c3aed;
-    --on-tertiary: #ffffff;
+    --tertiary: #6366f1;
+    --tertiary-container: #e0e7ff;
+    --on-tertiary: #3730a3;
 
     --error: #ef4444;
     --error-container: #fee2e2;
-    --on-error: #ffffff;
+    --on-error: #991b1b;
 
-    --outline: #94a3b8;
-    --outline-variant: #e2e8f0;
+    --outline: #64748b;
+    --outline-variant: #cbd5e1;
   }
 
-  /* DARK MODE VARIABLES (Mission-Critical Cyber-Industrial Control Room) */
+  /* DARK MODE VARIABLES (Authoritative Reference: UI/dark) */
   .dark {
     --surface: #0f131c;
     --surface-dim: #0f131c;
@@ -87,6 +87,7 @@
     color: var(--on-surface);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   /* Custom subtle scrollbar */
@@ -101,4 +102,24 @@
     background: var(--outline-variant);
     border-radius: 9999px;
   }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--outline);
+  }
+}
+
+/* Material Symbols Outlined Font Configuration */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }

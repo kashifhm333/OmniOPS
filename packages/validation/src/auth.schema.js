@@ -21,3 +21,4 @@ export const createTokenSchema = z.object({
 export const deviceCodeVerifySchema = z.object({
   userCode: z.string().trim().regex(/^[A-Z0-9]{4}-[A-Z0-9]{4}$/, "Code format must be ABCD-1234")
 });
+

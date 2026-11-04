@@ -42,3 +42,4 @@ const deviceGrantSchema = new mongoose.Schema(
 );
 
 export const DeviceGrant = mongoose.model("DeviceGrant", deviceGrantSchema);
+

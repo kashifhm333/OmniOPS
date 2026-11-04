@@ -74,3 +74,4 @@
 - Text elements meet WCAG 2.1 AA minimum contrast (4.5:1 for body copy, 3:1 for headers).
 - Interactive buttons and inputs contain explicit ARIA labels and focus rings.
 - Semantic HTML used throughout (`<header>`, `<main>`, `<aside>`, `<nav>`, `<table>`).
+

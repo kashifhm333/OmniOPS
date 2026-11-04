@@ -62,3 +62,4 @@ const incidentSchema = new mongoose.Schema(
 );
 
 export const Incident = mongoose.model("Incident", incidentSchema);
+

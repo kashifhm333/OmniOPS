@@ -46,3 +46,4 @@ This matrix maps every functional requirement (`FR-xxx`), non-functional require
 - `NOT_STARTED`: Scaffolding pending.
 - `IN_PROGRESS`: Currently under active implementation and local verification.
 - `VERIFIED`: Implemented, automated tests passed, and validated via real browser or CLI.
+

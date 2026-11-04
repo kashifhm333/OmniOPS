@@ -72,3 +72,4 @@ npm --prefix apps/api test
 # Run CLI tests specifically
 npm --prefix packages/cli test
 ```
+

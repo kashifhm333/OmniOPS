@@ -12,3 +12,4 @@ export const k8sPodLogsQuerySchema = z.object({
   tailLines: z.coerce.number().int().positive().max(2000).default(100),
   since: z.string().optional()
 });
+

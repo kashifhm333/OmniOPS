@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { 
   Activity, Cpu, HardDrive, Wifi, Bell, 
-  CheckCircle2, AlertTriangle, RefreshCw 
+  CheckCircle2, AlertTriangle 
 } from "lucide-react";
+import { PageHeader, Card, Badge } from "../../components/ui/index.js";
 
 export function MonitoringPage() {
   const [metrics, setMetrics] = useState({
@@ -31,30 +32,22 @@ export function MonitoringPage() {
 
   return (
     <div className="space-y-6">
-      
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-surface-container-high">
-        <div>
-          <h1 className="text-2xl font-bold font-mono tracking-tight text-on-surface flex items-center gap-2">
-            <Activity className="w-6 h-6 text-secondary" />
-            <span>INFRASTRUCTURE METRICS & PROMETHEUS</span>
-          </h1>
-          <p className="text-xs font-mono text-outline mt-1">
-            Real-time host system utilization, saturation thresholds, and SLO latency percentiles.
-          </p>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="px-3 py-1.5 rounded-lg bg-surface-container border border-surface-container-high text-xs font-mono text-outline">
-            Scrape interval: <span className="text-secondary font-bold">5s</span>
-          </div>
-        </div>
-      </div>
+      <PageHeader
+        title="INFRASTRUCTURE METRICS & PROMETHEUS"
+        description="Real-time host system utilization, saturation thresholds, and SLO latency percentiles."
+        icon={Activity}
+        isLive={true}
+        actions={
+          <Badge variant="neutral">
+            Scrape interval: <span className="text-secondary font-bold ml-1">5s</span>
+          </Badge>
+        }
+      />
 
       {/* Main Gauges */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* CPU */}
-        <div className="p-5 rounded-xl border border-surface-container-high bg-surface-container-lowest space-y-3">
+        <Card accent="cyan" className="p-5 space-y-3">
           <div className="flex items-center justify-between text-outline text-xs font-mono">
             <span>CPU UTILIZATION</span>
             <Cpu className="w-4 h-4 text-primary" />
@@ -67,10 +60,10 @@ export function MonitoringPage() {
             <div className="bg-primary h-2 rounded-full transition-all duration-500" style={{ width: `${metrics.cpu}%` }}></div>
           </div>
           <span className="text-[10px] font-mono text-outline block">Load average: 1.45, 1.28, 1.10</span>
-        </div>
+        </Card>
 
         {/* Memory */}
-        <div className="p-5 rounded-xl border border-surface-container-high bg-surface-container-lowest space-y-3">
+        <Card accent="emerald" className="p-5 space-y-3">
           <div className="flex items-center justify-between text-outline text-xs font-mono">
             <span>MEMORY (RAM)</span>
             <Activity className="w-4 h-4 text-secondary" />
@@ -83,10 +76,10 @@ export function MonitoringPage() {
             <div className="bg-secondary h-2 rounded-full transition-all duration-500" style={{ width: `${metrics.memory}%` }}></div>
           </div>
           <span className="text-[10px] font-mono text-outline block">Cached: 8.2 GB &bull; Buffers: 2.1 GB</span>
-        </div>
+        </Card>
 
         {/* P99 Latency */}
-        <div className="p-5 rounded-xl border border-surface-container-high bg-surface-container-lowest space-y-3">
+        <Card accent="violet" className="p-5 space-y-3">
           <div className="flex items-center justify-between text-outline text-xs font-mono">
             <span>P99 HTTP LATENCY</span>
             <Wifi className="w-4 h-4 text-tertiary" />
@@ -99,10 +92,10 @@ export function MonitoringPage() {
             <div className="bg-tertiary h-2 rounded-full transition-all duration-500" style={{ width: "36%" }}></div>
           </div>
           <span className="text-[10px] font-mono text-outline block">Throughput: {metrics.requestRate}</span>
-        </div>
+        </Card>
 
         {/* Storage */}
-        <div className="p-5 rounded-xl border border-surface-container-high bg-surface-container-lowest space-y-3">
+        <Card className="p-5 space-y-3">
           <div className="flex items-center justify-between text-outline text-xs font-mono">
             <span>NVMe STORAGE</span>
             <HardDrive className="w-4 h-4 text-outline" />
@@ -115,11 +108,11 @@ export function MonitoringPage() {
             <div className="bg-primary h-2 rounded-full transition-all duration-500" style={{ width: `${metrics.disk}%` }}></div>
           </div>
           <span className="text-[10px] font-mono text-outline block">IOPS: 4,890 &bull; Read: 120 MB/s</span>
-        </div>
+        </Card>
       </div>
 
       {/* Alert Rules & SLO Status */}
-      <div className="rounded-xl border border-surface-container-high bg-surface-container-lowest p-5 space-y-4">
+      <Card className="p-5 space-y-4">
         <h2 className="text-sm font-bold font-mono tracking-wider uppercase text-on-surface flex items-center gap-2">
           <Bell className="w-4 h-4 text-primary" />
           <span>Active Prometheus Alerting Rules</span>
@@ -132,29 +125,28 @@ export function MonitoringPage() {
               <span className="font-bold text-on-surface">TargetDownAlert</span>
               <span className="text-outline text-[11px]">(expr: up == 0, for: 2m)</span>
             </div>
-            <span className="px-2 py-0.5 rounded bg-secondary/15 text-secondary text-[10px] font-bold">OK</span>
+            <Badge variant="success">OK</Badge>
           </div>
 
           <div className="p-3 bg-surface-container flex items-center justify-between">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-secondary" />
-              <span className="font-bold text-on-surface">HighPodMemoryUsage</span>
-              <span className="text-outline text-[11px]">(expr: container_memory_usage &gt; 90%, for: 5m)</span>
+              <span className="font-bold text-on-surface">KubePodCrashLooping</span>
+              <span className="text-outline text-[11px]">(expr: rate(kube_pod_container_status_restarts_total[5m]) &gt; 0)</span>
             </div>
-            <span className="px-2 py-0.5 rounded bg-secondary/15 text-secondary text-[10px] font-bold">OK</span>
+            <Badge variant="success">OK</Badge>
           </div>
 
           <div className="p-3 bg-surface-container flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <AlertTriangle className="w-4 h-4 text-amber-500" />
-              <span className="font-bold text-on-surface">ApiGatewayLatencyBreach</span>
-              <span className="text-outline text-[11px]">(expr: http_request_duration_seconds &gt; 0.8s, for: 1m)</span>
+              <AlertTriangle className="w-4 h-4 text-amber-400" />
+              <span className="font-bold text-on-surface">HighP99Latency</span>
+              <span className="text-outline text-[11px]">(expr: histogram_quantile(0.99, rate(http_req_duration_seconds_bucket[5m])) &gt; 0.05)</span>
             </div>
-            <span className="px-2 py-0.5 rounded bg-amber-500/15 text-amber-400 text-[10px] font-bold">FIRING</span>
+            <Badge variant="warning">WATCHING</Badge>
           </div>
         </div>
-      </div>
-
+      </Card>
     </div>
   );
 }

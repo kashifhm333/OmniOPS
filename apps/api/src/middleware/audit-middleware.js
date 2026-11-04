@@ -51,3 +51,4 @@ export function logAuditMutation(action, resourceExtractor) {
     next();
   };
 }
+

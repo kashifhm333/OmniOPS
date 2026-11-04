@@ -148,3 +148,4 @@ flowchart TD
 2. **Zero Plaintext Secrets**: Secrets in database use AES-256-GCM envelope encryption; client variables never receive secrets.
 3. **No Mocks in Production Code**: Clear separation between development demo fixtures and real integration pipelines.
 4. **Chrome MCP Verification**: All web flows verified in live browser sessions before marking complete.
+

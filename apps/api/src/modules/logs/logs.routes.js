@@ -36,3 +36,4 @@ router.get("/query", authMiddleware, requireScope("read:logs"), async (req, res,
 });
 
 export default router;
+

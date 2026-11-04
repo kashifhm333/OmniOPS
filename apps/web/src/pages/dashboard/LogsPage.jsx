@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useQuery } from "@tanstack/react-query";
 import { 
-  Terminal, Search, Filter, ShieldCheck, Play, Pause, 
-  Trash2, Download, Copy, Check, RefreshCw 
+  Terminal, ShieldCheck, Play, Pause, 
+  Trash2, Download, Copy, Check 
 } from "lucide-react";
-import { apiClient } from "../../lib/api-client.js";
+import { PageHeader, Card, Badge, Button, SearchInput } from "../../components/ui/index.js";
 
 export function LogsPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -73,92 +72,82 @@ export function LogsPage() {
 
   return (
     <div className="space-y-6">
-      
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-surface-container-high">
-        <div>
-          <h1 className="text-2xl font-bold font-mono tracking-tight text-on-surface flex items-center gap-2">
-            <Terminal className="w-6 h-6 text-primary" />
-            <span>CENTRALIZED TELEMETRY LOGS</span>
-          </h1>
-          <p className="text-xs font-mono text-outline mt-1">
-            Zero-plaintext log aggregation with live regex masking for API tokens, passwords, and private keys.
-          </p>
-        </div>
+      <PageHeader
+        title="CENTRALIZED TELEMETRY LOGS"
+        description="Zero-plaintext log aggregation with live regex masking for API tokens, passwords, and private keys."
+        icon={Terminal}
+        isLive={isStreaming}
+        actions={
+          <div className="flex items-center gap-3">
+            <Badge variant="success">
+              <ShieldCheck className="w-3.5 h-3.5 mr-1" />
+              SECRET MASKING ACTIVE
+            </Badge>
 
-        <div className="flex items-center gap-3">
-          <div className="px-3 py-1.5 rounded-lg bg-secondary/10 border border-secondary/30 text-secondary text-xs font-mono font-bold flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4" />
-            SECRET MASKING ACTIVE
+            <Button
+              variant={isStreaming ? "primary" : "secondary"}
+              size="sm"
+              onClick={() => setIsStreaming(!isStreaming)}
+              icon={isStreaming ? Pause : Play}
+            >
+              {isStreaming ? "PAUSE STREAM" : "RESUME STREAM"}
+            </Button>
           </div>
-
-          <button
-            onClick={() => setIsStreaming(!isStreaming)}
-            className={`px-3 py-1.5 rounded-lg font-mono text-xs font-bold flex items-center gap-2 transition-colors ${
-              isStreaming
-                ? "bg-primary text-surface"
-                : "bg-surface-container border border-surface-container-high text-on-surface"
-            }`}
-          >
-            {isStreaming ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
-            {isStreaming ? "PAUSE STREAM" : "RESUME STREAM"}
-          </button>
-        </div>
-      </div>
+        }
+      />
 
       {/* Query Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 p-3 rounded-xl border border-surface-container-high bg-surface-container-lowest">
-        <div className="relative w-full sm:w-96">
-          <Search className="w-4 h-4 text-outline absolute left-3 top-2.5" />
-          <input
-            type="text"
-            placeholder="Search query (e.g. 502, CrashLoop, api-gateway)..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-3 py-1.5 rounded-lg border border-surface-container-high bg-surface-container text-xs font-mono text-on-surface placeholder-outline focus:outline-none focus:border-primary"
-          />
-        </div>
+      <Card className="p-3">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="w-full sm:w-96">
+            <SearchInput
+              placeholder="Search query (e.g. 502, CrashLoop, api-gateway)..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
 
-        <div className="flex items-center gap-2 w-full sm:w-auto overflow-x-auto">
-          {["ALL", "ERROR", "WARN", "INFO", "DEBUG"].map((lvl) => (
-            <button
-              key={lvl}
-              onClick={() => setSelectedLevel(lvl)}
-              className={`px-2.5 py-1 rounded text-xs font-mono whitespace-nowrap transition-colors ${
-                selectedLevel === lvl
-                  ? "bg-primary text-surface font-bold"
-                  : "bg-surface-container text-outline hover:text-on-surface"
-              }`}
+          <div className="flex items-center gap-2 w-full sm:w-auto overflow-x-auto">
+            {["ALL", "ERROR", "WARN", "INFO", "DEBUG"].map((lvl) => (
+              <button
+                key={lvl}
+                onClick={() => setSelectedLevel(lvl)}
+                className={`px-2.5 py-1 rounded text-xs font-mono whitespace-nowrap transition-colors ${
+                  selectedLevel === lvl
+                    ? "bg-primary text-on-primary font-bold shadow-hud-cyan"
+                    : "bg-surface-container text-outline hover:text-on-surface"
+                }`}
+              >
+                {lvl}
+              </button>
+            ))}
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={handleCopy}
+              icon={copied ? Check : Copy}
             >
-              {lvl}
-            </button>
-          ))}
-          <button
-            onClick={handleCopy}
-            className="px-2.5 py-1 rounded bg-surface-container border border-surface-container-high hover:border-outline text-on-surface text-xs font-mono flex items-center gap-1.5"
-            title="Copy logs"
-          >
-            {copied ? <Check className="w-3.5 h-3.5 text-secondary" /> : <Copy className="w-3.5 h-3.5" />}
-            <span>{copied ? "COPIED" : "COPY"}</span>
-          </button>
+              {copied ? "COPIED" : "COPY"}
+            </Button>
+          </div>
         </div>
-      </div>
+      </Card>
 
       {/* Terminal Display */}
       <div className="rounded-xl border border-surface-container-high bg-[#05080e] overflow-hidden shadow-2xl">
         {/* Terminal Header */}
-        <div className="px-4 py-2 bg-[#090e17] border-b border-surface-container-high flex items-center justify-between text-xs font-mono text-outline">
+        <div className="px-4 py-2.5 bg-[#090e17] border-b border-surface-container-high flex items-center justify-between text-xs font-mono text-outline">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-error/70"></span>
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500/70"></span>
             <span className="w-2.5 h-2.5 rounded-full bg-secondary/70"></span>
-            <span className="ml-2 text-on-surface font-semibold">omniops-telemetry-tail</span>
+            <span className="ml-2 text-slate-200 font-semibold tracking-wider">omniops-telemetry-tail</span>
           </div>
           <div className="flex items-center gap-3">
             <span>Buffer: {filteredLogs.length} events</span>
             <button 
               onClick={() => setLogs([])}
-              className="hover:text-on-surface text-outline"
+              className="hover:text-slate-100 text-outline transition-colors"
               title="Clear terminal"
             >
               <Trash2 className="w-3.5 h-3.5" />
@@ -172,7 +161,7 @@ export function LogsPage() {
           className="p-4 font-mono text-xs overflow-y-auto max-h-[600px] min-h-[400px] space-y-1.5 text-slate-300"
         >
           {filteredLogs.length === 0 ? (
-            <div className="text-center py-12 text-outline">
+            <div className="text-center py-16 text-outline">
               No log messages matching filter criteria.
             </div>
           ) : (
@@ -200,7 +189,6 @@ export function LogsPage() {
           )}
         </div>
       </div>
-
     </div>
   );
 }

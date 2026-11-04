@@ -157,3 +157,4 @@ npm --prefix apps/web run dev
 ## 5. Certification of Completion
 
 The OmniOPS platform has been built cleanly without shortcuts or mocks in production paths, adhering strictly to the architecture specifications, UI tokens, and quality standards.
+

@@ -59,3 +59,4 @@ const clusterSchema = new mongoose.Schema(
 );
 
 export const Cluster = mongoose.model("Cluster", clusterSchema);
+

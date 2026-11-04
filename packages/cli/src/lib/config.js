@@ -51,3 +51,4 @@ export function clearCliConfig() {
     // Ignore
   }
 }
+

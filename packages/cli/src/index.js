@@ -26,3 +26,4 @@ export async function runCli(argv = process.argv) {
   const program = createProgram();
   await program.parseAsync(argv);
 }
+

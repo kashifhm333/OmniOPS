@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext.jsx";
 import { apiClient } from "../lib/api-client.js";
-import { Terminal, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Terminal, CheckCircle2, AlertCircle } from "lucide-react";
+import { Card, Button, Input } from "../components/ui/index.js";
 
 export function DevicePage() {
   const [userCode, setUserCode] = useState("");
@@ -25,9 +26,9 @@ export function DevicePage() {
 
   return (
     <div className="min-h-[calc(100vh-8rem)] flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-md p-8 rounded-2xl bg-surface-container border border-surface-container-high shadow-2xl text-left">
+      <Card accent="cyan" className="w-full max-w-md p-8 shadow-2xl text-left">
         <div className="text-center mb-6">
-          <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary mx-auto mb-3">
+          <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary mx-auto mb-3 shadow-hud-cyan">
             <Terminal className="w-6 h-6" />
           </div>
           <h1 className="text-2xl font-bold text-on-surface tracking-tight">Authorize CLI Terminal</h1>
@@ -57,30 +58,33 @@ export function DevicePage() {
               <label className="block text-xs font-mono font-semibold text-on-surface mb-1.5">
                 ENTER 8-CHARACTER CODE
               </label>
-              <input
+              <Input
                 type="text"
                 required
                 maxLength={9}
                 placeholder="ABCD-1234"
                 value={userCode}
                 onChange={(e) => setUserCode(e.target.value)}
-                className="w-full text-center text-2xl font-mono font-bold tracking-widest py-3 rounded bg-surface-container-lowest border border-surface-container-high text-primary uppercase focus:outline-none focus:border-primary"
+                mono
+                className="text-center text-2xl font-bold tracking-widest py-3 text-primary uppercase"
               />
               <span className="text-[11px] text-outline block mt-1">
                 Enter the code displayed in your terminal window after running <code>omniops auth login</code>.
               </span>
             </div>
 
-            <button
+            <Button
               type="submit"
-              disabled={status === "APPROVING" || !userCode}
-              className="w-full py-2.5 bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-semibold text-sm rounded shadow-hud-cyan transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+              variant="primary"
+              loading={status === "APPROVING"}
+              disabled={!userCode}
+              className="w-full py-2.5 font-semibold text-sm"
             >
-              {status === "APPROVING" ? <Loader2 className="w-4 h-4 animate-spin" /> : <span>Approve Terminal</span>}
-            </button>
+              Approve Terminal
+            </Button>
           </form>
         )}
-      </div>
+      </Card>
     </div>
   );
 }

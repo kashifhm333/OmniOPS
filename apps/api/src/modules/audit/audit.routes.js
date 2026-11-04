@@ -33,3 +33,4 @@ router.get("/logs", authMiddleware, requireRole("viewer"), async (req, res, next
 });
 
 export default router;
+

@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { 
   GitBranch, Play, CheckCircle2, XCircle, Clock, 
-  ExternalLink, RotateCw, GitCommit, User, ShieldCheck
+  RotateCw, GitCommit, User 
 } from "lucide-react";
-import { apiClient } from "../../lib/api-client.js";
+import { PageHeader, Card, Badge, Button } from "../../components/ui/index.js";
 
 export function CicdPage() {
-  const queryClient = useQueryClient();
   const [isTriggering, setIsTriggering] = useState(false);
 
   const initialPipelines = [
@@ -97,30 +95,21 @@ export function CicdPage() {
 
   return (
     <div className="space-y-6">
-      
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-surface-container-high">
-        <div>
-          <h1 className="text-2xl font-bold font-mono tracking-tight text-on-surface flex items-center gap-2">
-            <GitBranch className="w-6 h-6 text-tertiary" />
-            <span>CONTINUOUS INTEGRATION & DELIVERY</span>
-          </h1>
-          <p className="text-xs font-mono text-outline mt-1">
-            Automated quality gates, container image vulnerability scanning, and zero-downtime rollouts.
-          </p>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <button
+      <PageHeader
+        title="CONTINUOUS INTEGRATION & DELIVERY"
+        description="Automated quality gates, container image vulnerability scanning, and zero-downtime rollouts."
+        icon={GitBranch}
+        actions={
+          <Button
+            variant="primary"
             onClick={handleTriggerPipeline}
             disabled={isTriggering}
-            className="px-3 py-1.5 rounded-lg bg-tertiary hover:bg-tertiary/90 text-surface text-xs font-mono font-bold flex items-center gap-2 transition-colors shadow-hud-cyan"
+            icon={Play}
           >
-            <Play className={`w-3.5 h-3.5 ${isTriggering ? "animate-spin" : ""}`} />
             {isTriggering ? "DISPATCHING..." : "TRIGGER PIPELINE"}
-          </button>
-        </div>
-      </div>
+          </Button>
+        }
+      />
 
       {/* Pipeline Cards */}
       <div className="space-y-4">
@@ -130,26 +119,22 @@ export function CicdPage() {
           const isFailed = run.status === "FAILED";
 
           return (
-            <div 
-              key={run.id}
-              className="p-5 rounded-xl border border-surface-container-high bg-surface-container-lowest space-y-4 hover:border-outline/50 transition-colors"
-            >
+            <Card key={run.id} className="p-5 space-y-4 hover:border-outline/50 transition-colors">
               {/* Top Row */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <span className={`px-2.5 py-1 rounded font-mono text-xs font-bold flex items-center gap-1.5 ${
-                    isSuccess ? "bg-secondary/15 text-secondary border border-secondary/30" :
-                    isRunning ? "bg-primary/15 text-primary border border-primary/30 animate-pulse" :
-                    "bg-error/15 text-error border border-error/30"
-                  }`}>
-                    {isSuccess && <CheckCircle2 className="w-3.5 h-3.5" />}
-                    {isRunning && <RotateCw className="w-3.5 h-3.5 animate-spin" />}
-                    {isFailed && <XCircle className="w-3.5 h-3.5" />}
+                  <Badge 
+                    variant={isSuccess ? "success" : isRunning ? "primary" : "danger"} 
+                    dot={isRunning}
+                  >
+                    {isSuccess && <CheckCircle2 className="w-3.5 h-3.5 mr-1" />}
+                    {isRunning && <RotateCw className="w-3.5 h-3.5 animate-spin mr-1" />}
+                    {isFailed && <XCircle className="w-3.5 h-3.5 mr-1" />}
                     {run.status}
-                  </span>
-
-                  <span className="font-mono text-xs font-bold text-on-surface">{run.repo}</span>
-                  <span className="font-mono text-xs px-2 py-0.5 rounded bg-surface-container text-outline">
+                  </Badge>
+                  <span className="font-mono text-sm font-bold text-on-surface">{run.repo}</span>
+                  <span className="font-mono text-xs text-outline flex items-center gap-1">
+                    <GitBranch className="w-3 h-3 text-tertiary" />
                     {run.branch}
                   </span>
                 </div>
@@ -164,46 +149,50 @@ export function CicdPage() {
               </div>
 
               {/* Commit info */}
-              <div className="flex items-center gap-2 text-xs font-mono">
-                <GitCommit className="w-3.5 h-3.5 text-primary" />
-                <span className="text-primary font-semibold">{run.commit}</span>
-                <span className="text-on-surface font-medium truncate">{run.message}</span>
-                <span className="text-outline ml-auto hidden md:inline">by {run.author}</span>
+              <div className="flex items-center gap-3 text-xs font-mono">
+                <span className="px-2 py-0.5 rounded bg-surface-container text-primary font-bold flex items-center gap-1 border border-surface-container-high">
+                  <GitCommit className="w-3 h-3" />
+                  {run.commit}
+                </span>
+                <span className="text-on-surface flex-1 truncate">{run.message}</span>
+                <span className="text-outline flex items-center gap-1 shrink-0">
+                  <User className="w-3 h-3" />
+                  {run.author}
+                </span>
               </div>
 
-              {/* Stages Visualizer */}
-              <div className="pt-2 border-t border-surface-container-high">
-                <span className="text-[10px] font-mono text-outline uppercase tracking-wider block mb-2">
-                  Pipeline Stages
-                </span>
-                <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
-                  {run.stages.map((stg, i) => (
+              {/* Pipeline Stages */}
+              <div className="pt-2 border-t border-surface-container-high grid grid-cols-2 sm:grid-cols-5 gap-2">
+                {run.stages.map((stage, idx) => {
+                  const stageSuccess = stage.status === "passed";
+                  const stageRunning = stage.status === "running";
+                  const stageFailed = stage.status === "failed";
+
+                  return (
                     <div 
-                      key={i}
-                      className={`p-2 rounded-lg border text-xs font-mono flex flex-col justify-between ${
-                        stg.status === "passed" ? "bg-secondary/5 border-secondary/20 text-on-surface" :
-                        stg.status === "running" ? "bg-primary/10 border-primary text-primary" :
-                        stg.status === "failed" ? "bg-error/10 border-error text-error" :
+                      key={idx}
+                      className={`p-2.5 rounded-lg border text-xs font-mono transition-colors ${
+                        stageSuccess ? "bg-secondary/10 border-secondary/30 text-secondary" :
+                        stageRunning ? "bg-primary/10 border-primary/40 text-primary animate-pulse" :
+                        stageFailed ? "bg-error/10 border-error/30 text-error" :
                         "bg-surface-container border-surface-container-high text-outline"
                       }`}
                     >
-                      <div className="flex items-center justify-between text-[11px] mb-1">
-                        <span className="font-semibold truncate">{stg.name}</span>
-                        {stg.status === "passed" && <CheckCircle2 className="w-3 h-3 text-secondary shrink-0" />}
-                        {stg.status === "running" && <RotateCw className="w-3 h-3 animate-spin shrink-0" />}
-                        {stg.status === "failed" && <XCircle className="w-3 h-3 text-error shrink-0" />}
+                      <div className="flex items-center justify-between font-bold">
+                        <span className="truncate">{stage.name}</span>
+                        {stageSuccess && <CheckCircle2 className="w-3 h-3 shrink-0" />}
+                        {stageRunning && <RotateCw className="w-3 h-3 animate-spin shrink-0" />}
+                        {stageFailed && <XCircle className="w-3 h-3 shrink-0" />}
                       </div>
-                      <span className="text-[10px] text-outline">{stg.duration}</span>
+                      <div className="text-[10px] opacity-75 mt-1">{stage.duration}</div>
                     </div>
-                  ))}
-                </div>
+                  );
+                })}
               </div>
-
-            </div>
+            </Card>
           );
         })}
       </div>
-
     </div>
   );
 }

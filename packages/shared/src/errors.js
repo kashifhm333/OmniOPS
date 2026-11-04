@@ -63,3 +63,4 @@ export class RateLimitError extends AppError {
     super(message, 429, "RATE_LIMITED", details);
   }
 }
+

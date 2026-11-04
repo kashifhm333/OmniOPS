@@ -127,3 +127,4 @@ router.get("/logs/stream", authMiddleware, requireScope("read:logs"), (req, res)
 });
 
 export default router;
+
