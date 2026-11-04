@@ -1,0 +1,79 @@
+
+omniops/
+│
+├── README.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── CHANGELOG.md
+├── SECURITY.md
+├── .env.example
+│
+├── docs/
+│   │
+│   ├── 00-overview/
+│   │   ├── PROJECT_OVERVIEW.md
+│   │   ├── PRODUCT_REQUIREMENTS.md
+│   │   ├── PRODUCT_ROADMAP.md
+│   │   └── SCOPE_AND_FEATURES.md
+│   │
+│   ├── 01-architecture/
+│   │   ├── SYSTEM_ARCHITECTURE.md
+│   │   ├── MONOREPO_ARCHITECTURE.md
+│   │   ├── FOLDER_STRUCTURE.md
+│   │   ├── DATA_FLOW.md
+│   │   └── ARCHITECTURAL_DECISIONS.md
+│   │
+│   ├── 02-frontend/
+│   │   ├── FRONTEND_SPECIFICATION.md
+│   │   ├── UI_UX_DESIGN_SYSTEM.md
+│   │   ├── ROUTING_AND_NAVIGATION.md
+│   │   └── FRONTEND_STATE_MANAGEMENT.md
+│   │
+│   ├── 03-backend/
+│   │   ├── BACKEND_SPECIFICATION.md
+│   │   ├── API_STANDARDS.md
+│   │   ├── API_ENDPOINTS.md
+│   │   ├── AUTHENTICATION_AND_AUTHORIZATION.md
+│   │   └── BACKGROUND_JOBS_AND_EVENTS.md
+│   │
+│   ├── 04-cli/
+│   │   ├── CLI_PRODUCT_SPECIFICATION.md
+│   │   ├── CLI_ARCHITECTURE.md
+│   │   ├── CLI_COMMAND_REFERENCE.md
+│   │   └── CLI_CONFIGURATION_AND_AUTH.md
+│   │
+│   ├── 05-database/
+│   │   ├── DATABASE_DESIGN.md
+│   │   ├── DATA_MODELS_AND_SCHEMAS.md
+│   │   └── DATA_LIFECYCLE_AND_BACKUPS.md
+│   │
+│   ├── 06-security/
+│   │   ├── SECURITY_ARCHITECTURE.md
+│   │   ├── THREAT_MODEL.md
+│   │   └── SECURITY_AND_COMPLIANCE.md
+│   │
+│   ├── 07-testing/
+│   │   ├── TESTING_STRATEGY.md
+│   │   └── QUALITY_STANDARDS.md
+│   │
+│   ├── 08-devops/
+│   │   ├── CONTAINERIZATION_AND_LOCAL_DEVELOPMENT.md
+│   │   ├── CI_CD_AND_DEPLOYMENT.md
+│   │   └── INFRASTRUCTURE_AS_CODE.md
+│   │
+│   └── 09-developer-experience/
+│       ├── DEVELOPMENT_GUIDELINES.md
+│       └── API_DOCUMENTATION_GUIDELINES.md
+│
+├── apps/
+│   ├── web/
+│   └── api/
+│
+├── packages/
+│   ├── cli/
+│   ├── shared/
+│   ├── config/
+│   └── validation/
+│
+└── infrastructure/
+

@@ -1,0 +1,692 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"error":"#ffb4ab","on-tertiary":"#3c0091","inverse-on-surface":"#2c3039","on-secondary-container":"#00311f","tertiary-container":"#b395ff","on-primary-fixed":"#001f26","secondary":"#4edea3","error-container":"#93000a","on-primary":"#003640","primary":"#4cd7f6","on-surface":"#dfe2ee","primary-fixed":"#acedff","primary-fixed-dim":"#4cd7f6","on-surface-variant":"#bcc9cd","inverse-surface":"#dfe2ee","on-tertiary-fixed":"#23005c","secondary-fixed-dim":"#4edea3","on-secondary-fixed":"#002113","tertiary-fixed-dim":"#d0bcff","surface-container-high":"#262a33","on-error-container":"#ffdad6","surface-tint":"#4cd7f6","on-secondary-fixed-variant":"#005236","tertiary":"#d0bcff","background":"#0f131c","secondary-fixed":"#6ffbbe","surface-container-low":"#181c24","on-error":"#690005","on-primary-fixed-variant":"#004e5c","on-background":"#dfe2ee","secondary-container":"#00a572","on-primary-container":"#00424f","surface-container":"#1c2028","on-secondary":"#003824","on-tertiary-fixed-variant":"#5516be","outline":"#869397","outline-variant":"#3d494c","on-tertiary-container":"#4900ae","surface":"#0f131c","tertiary-fixed":"#e9ddff","surface-container-lowest":"#0a0e16","primary-container":"#06b6d4","inverse-primary":"#00687a","surface-bright":"#353942","surface-variant":"#31353e","surface-dim":"#0f131c","surface-container-highest":"#31353e"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter":"1rem","space-xs":"0.25rem","margin-mobile":"1rem","gutter-dense":"0.75rem","space-md":"0.75rem","margin":"1.5rem","space-sm":"0.5rem","space-lg":"1.25rem","space-xl":"2rem"},"fontFamily":{"headline-xl":["Inter"],"label-code":["JetBrains Mono"],"body-sm":["Inter"],"headline-md":["Inter"],"headline-lg":["Inter"],"headline-xl-mobile":["Inter"],"title-sm":["Inter"],"body-md":["Inter"],"label-telemetry":["JetBrains Mono"],"label-mono-sm":["JetBrains Mono"],"badge-caps":["Inter"]},"fontSize":{"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-code":["13px",{"lineHeight":"18px","fontWeight":"400"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-xl-mobile":["26px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"title-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-telemetry":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"label-mono-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"500"}],"badge-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="h-16 w-full px-gutter flex items-center justify-between"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="platform" href="#"><img alt="OmniOPS Wordmark Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UmXp1HmzYUKQ_xvS-kaVIzKPGVJWYP7JM0TT4jDBA7rHKkhizzhDhjMfnZWn9WBKQtmtqmTKEp_lyfEBpLxVWTFnaV9EzumUXSNgcZ0x2lxdcAGCSRzHDI4O-pEFC1gTP7b-I5XQgJRijX8jr4Ml39JOeo4-SmAX_kJQQ2eSsCe6JpcL5wMIzu5NLxKR-Zp-SemYn-WQLpfauakwpO-XhJBB2Tf6nTMOSw3K2aD2Qx"><span class="font-headline-md text-headline-md text-primary tracking-tight">OmniOPS</span></a><div class="h-5 w-px bg-surface-container-highest hidden lg:block"></div><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-surface-container text-primary rounded"><div class="relative group"><button class="flex items-center gap-1 px-space-sm py-1.5 text-on-surface-variant font-body-md text-body-md hover:text-on-surface rounded transition-colors" type="button">Platform<span class="material-symbols-outlined text-[16px] text-outline transition-transform duration-200 group-hover:rotate-180">expand_more</span></button><div class="absolute top-full left-0 mt-1 w-[460px] p-space-md bg-surface-container-low shadow-[0_8px_24px_rgba(0,0,0,0.5)] rounded-xl opacity-0 translate-y-1 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto z-50"><div class="grid grid-cols-2 gap-space-xs"><a class="p-space-sm rounded hover:bg-surface-container-high transition-colors" data-path="command-center" href="#"><span class="font-title-sm text-title-sm text-on-surface block">Command Center</span><span class="font-body-sm text-body-sm text-outline block">Unified telemetry HUD</span></a><a class="p-space-sm rounded hover:bg-surface-container-high transition-colors" data-path="github" href="#"><span class="font-title-sm text-title-sm text-on-surface block">GitHub</span><span class="font-body-sm text-body-sm text-outline block">Repo &amp; sync webhooks</span></a><a class="p-space-sm rounded hover:bg-surface-container-high transition-colors" data-path="ci-cd" href="#"><span class="font-title-sm text-title-sm text-on-surface block">CI/CD</span><span class="font-body-sm text-body-sm text-outline block">Pipeline automations</span></a><a class="p-space-sm rounded hover:bg-surface-container-high transition-colors" data-path="docker" href="#"><span class="font-title-sm text-title-sm text-on-surface block">Docker</span><span class="font-body-sm text-body-sm text-outline block">Image registry &amp; builds</span></a><a class="p-space-sm rounded hover:bg-surface-container-high transition-colors" data-path="kubernetes" href="#"><span class="font-title-sm text-title-sm text-on-surface block">Kubernetes</span><span class="font-body-sm text-body-sm text-outline block">Cluster mesh operator</span></a><a class="p-space-sm rounded hover:bg-surface-container-high transition-colors" data-path="monitoring" href="#"><span class="font-title-sm text-title-sm text-on-surface block">Monitoring</span><span class="font-body-sm text-body-sm text-outline block">APM &amp; node matrix</span></a><a class="p-space-sm rounded hover:bg-surface-container-high transition-colors" data-path="logging" href="#"><span class="font-title-sm text-title-sm text-on-surface block">Logging</span><span class="font-body-sm text-body-sm text-outline block">Log streamer console</span></a><a class="p-space-sm rounded hover:bg-surface-container-high transition-colors" data-path="cloud" href="#"><span class="font-title-sm text-title-sm text-on-surface block">Cloud</span><span class="font-body-sm text-body-sm text-outline block">Multi-region topology</span></a><a class="p-space-sm rounded hover:bg-surface-container-high transition-colors" data-path="incidents" href="#"><span class="font-title-sm text-title-sm text-on-surface block">Incidents</span><span class="font-body-sm text-body-sm text-outline block">SRE war room alerts</span></a><a class="p-space-sm rounded hover:bg-surface-container-high transition-colors" data-path="terraform" href="#"><span class="font-title-sm text-title-sm text-on-surface block">Terraform</span><span class="font-body-sm text-body-sm text-outline block">Declarative state engine</span></a><a class="p-space-sm rounded hover:bg-surface-container-high transition-colors" data-path="teams" href="#"><span class="font-title-sm text-title-sm text-on-surface block">Teams</span><span class="font-body-sm text-body-sm text-outline block">RBAC &amp; security policies</span></a><a class="p-space-sm rounded hover:bg-surface-container-high transition-colors" data-path="ai-assistant" href="#"><span class="font-title-sm text-title-sm text-on-surface block">AI Assistant</span><span class="font-body-sm text-body-sm text-outline block">Diagnostic copilot</span></a></div></div></div><a class="px-space-sm py-1.5 text-on-surface-variant font-body-md text-body-md hover:text-on-surface rounded transition-colors" data-path="integrations" href="#">Integrations</a><a class="px-space-sm py-1.5 text-on-surface-variant font-body-md text-body-md hover:text-on-surface rounded transition-colors" data-path="cli" href="#">CLI</a><a class="px-space-sm py-1.5 text-on-surface-variant font-body-md text-body-md hover:text-on-surface rounded transition-colors" data-path="docs" href="#">Docs</a><a class="px-space-sm py-1.5 text-on-surface-variant font-body-md text-body-md hover:text-on-surface rounded transition-colors" data-path="pricing" href="#">Pricing</a></nav></div><div class="flex items-center gap-space-md"><button aria-label="Toggle dark mode" class="h-8 px-space-xs py-1 rounded bg-surface-container flex items-center gap-1.5 hover:bg-surface-container-high transition-colors" onclick="document.documentElement.classList.toggle('dark')" type="button"><span class="material-symbols-outlined text-[16px] text-outline dark:text-primary">dark_mode</span><div class="w-7 h-4 rounded-full bg-surface-container-highest relative flex items-center p-0.5"><div class="w-3 h-3 rounded-full bg-primary transform transition-transform duration-200 translate-x-3 dark:translate-x-3"></div></div><span class="material-symbols-outlined text-[16px] text-outline dark:text-outline-variant">light_mode</span></button><a class="hidden sm:inline-flex px-space-sm py-1.5 text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors" data-path="login" href="#">Login</a><a class="px-space-md py-1.5 bg-primary-container text-on-primary-container font-body-md text-body-md font-semibold rounded hover:bg-primary hover:text-on-primary shadow-[0_0_12px_rgba(6,182,212,0.3)] transition-all" data-path="signup" href="#">Sign Up</a></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-16rem)]"><div class="flex flex-col w-full">
+<!-- Interactive Background Glow & Ambient Grid -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[480px] bg-gradient-to-b from-primary/15 via-tertiary/10 to-transparent blur-3xl pointer-events-none rounded-full"></div>
+<div class="absolute top-96 right-10 w-96 h-96 bg-secondary/10 blur-[120px] pointer-events-none rounded-full"></div>
+<!-- Hero Section -->
+<section class="relative w-full px-gutter pt-space-xl pb-16 md:pb-24 max-w-7xl mx-auto flex flex-col items-center text-center">
+<!-- Release Version Badge -->
+
+<!-- Main Headline & Subtitle -->
+<h1 class="font-headline-xl text-headline-xl md:text-[54px] md:leading-[62px] text-on-surface tracking-tight max-w-4xl mx-auto">
+        A Single Command Center Built for <span class="bg-gradient-to-r from-primary via-primary-container to-tertiary bg-clip-text text-transparent">Developers and DevOps</span>
+</h1>
+<p class="font-body-md text-body-md md:text-title-sm text-on-surface-variant max-w-2xl mt-space-md mx-auto leading-relaxed">
+        Unify Kubernetes, Docker, CI/CD, Terraform, Cloud, and observability into one intelligent control plane. Operate from your terminal or browser seamlessly.
+      </p>
+<!-- Primary CTAs -->
+<div class="flex flex-wrap items-center justify-center gap-space-md mt-space-xl">
+<a class="px-6 py-3 bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-title-sm text-title-sm rounded shadow-[0_0_20px_rgba(6,182,212,0.35)] transition-all flex items-center gap-space-xs font-semibold" data-path="signup" href="#">
+<span class="">Try for Free</span>
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</a>
+<a class="px-6 py-3 bg-surface-container-high hover:bg-surface-bright text-on-surface font-title-sm text-title-sm rounded shadow-sm transition-all flex items-center gap-space-xs font-medium" href="#cli-synergy">
+<span class="material-symbols-outlined text-[20px] text-outline">terminal</span>
+<span class="">Explore CLI</span>
+</a>
+<a class="px-6 py-3 bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-title-sm text-title-sm rounded transition-all" data-path="demo" href="#">
+          Schedule Demo
+        </a>
+</div>
+<!-- Quick Trust Indicators -->
+<div class="flex flex-wrap items-center justify-center gap-space-lg mt-space-lg text-outline font-label-telemetry text-label-telemetry">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">verified</span> Zero Agent Lock-in</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-primary">speed</span> 40ms Global Telemetry Mesh</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-tertiary">lock</span> SOC2 Type II Certified</span>
+</div>
+<!-- Interactive Nucleus HUD Diagram (Visual homage to Inspiration Image) -->
+<div class="w-full max-w-5xl mt-14 relative bg-surface-container-lowest rounded-xl shadow-2xl p- space-md md:p-space-lg overflow-hidden">
+<!-- Dashboard Top Control Header -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-md mb-space-md bg-surface-container-lowest">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary-container"></span>
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="ml-2 font-label-code text-label-code text-on-surface-variant font-medium">omniops-core-mesh-prod // us-east-1 // cluster-prod-08</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-surface-container-high font-label-mono-sm text-label-mono-sm text-secondary font-label-code">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span> 99.8% HEALTH
+            </span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-label-code">LATENCY: 12ms</span>
+</div>
+</div>
+<!-- Central Orbit Visualization & SRE Telemetry -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-center">
+<!-- Left Column: Developer Capabilities -->
+<div class="lg:col-span-3 flex flex-col gap-space-md text-left">
+<div class="p-space-md rounded bg-surface-container-low shadow-sm">
+<span class="font-badge-caps text-badge-caps uppercase tracking-wider text-primary font-semibold block mb-1">Developer Stream</span>
+<p class="font-title-sm text-title-sm text-on-surface">Self-Service Environments</p>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">Ephemeral staging per Git branch with synthetic seed mock databases.</p>
+</div>
+<div class="p-space-md rounded bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-badge-caps text-badge-caps uppercase tracking-wider text-secondary font-semibold">Active CI Workflows</span>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary font-label-code">14 Running</span>
+</div>
+<p class="font-title-sm text-title-sm text-on-surface mt-1">GitHub Actions + ArgoCD</p>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 78%;"></div>
+</div>
+</div>
+<div class="p-space-md rounded bg-surface-container-low shadow-sm">
+<span class="font-badge-caps text-badge-caps uppercase tracking-wider text-outline font-semibold block mb-1">Developer CLI Sync</span>
+<p class="font-label-code text-label-code text-primary">omniops env checkout dev-44</p>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant block mt-1">Linked to pod-auth-service-7f</span>
+</div>
+</div>
+<!-- Middle Orbit Core Canvas -->
+<div class="lg:col-span-6 relative flex flex-col items-center justify-center py-6 min-h-[340px]">
+<!-- Decorative concentric circles -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-[320px] h-[320px] rounded-full bg-surface-container-low/40 animate-[spin_60s_linear_infinite] flex items-center justify-center">
+<div class="w-[240px] h-[240px] rounded-full bg-surface-container/60 flex items-center justify-center">
+<div class="w-[160px] h-[160px] rounded-full bg-surface-container-high/80"></div>
+</div>
+</div>
+</div>
+<!-- Central Hex / Core Node -->
+<div class="relative z-10 p-5 rounded-full bg-gradient-to-br from-primary-container via-surface-container-high to-tertiary-container shadow-[0_0_35px_rgba(6,182,212,0.4)] flex flex-col items-center justify-center w-36 h-36 text-center">
+<span class="material-symbols-outlined text-[36px] text-on-primary">hub</span>
+<span class="font-headline-md text-headline-md text-on-primary font-bold mt-1">OMNI</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-primary font-label-code tracking-wider uppercase">Fabric Mesh</span>
+</div>
+<!-- Orbiting Badges -->
+<div class="relative z-10 w-full flex items-center justify-between px-2 mt-6">
+<div class="px-3 py-1.5 rounded bg-surface-container-high text-center shadow-md">
+<span class="font-label-telemetry text-label-telemetry text-secondary block font-semibold">BUILD</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-label-code">0m 42s avg</span>
+</div>
+<div class="px-3 py-1.5 rounded bg-surface-container-high text-center shadow-md">
+<span class="font-label-telemetry text-label-telemetry text-primary block font-semibold">DEPLOY</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-label-code">Canary 10%</span>
+</div>
+<div class="px-3 py-1.5 rounded bg-surface-container-high text-center shadow-md">
+<span class="font-label-telemetry text-label-telemetry text-tertiary block font-semibold">OPERATE</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-label-code">K8s Mesh 3.2</span>
+</div>
+</div>
+</div>
+<!-- Right Column: DevOps Capabilities -->
+<div class="lg:col-span-3 flex flex-col gap-space-md text-left">
+<div class="p-space-md rounded bg-surface-container-low shadow-sm">
+<span class="font-badge-caps text-badge-caps uppercase tracking-wider text-tertiary font-semibold block mb-1">DevOps Control</span>
+<p class="font-title-sm text-title-sm text-on-surface">Centralized Configs &amp; State</p>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">Terraform drift reconciliation running continuously every 15 min.</p>
+</div>
+<div class="p-space-md rounded bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-badge-caps text-badge-caps uppercase tracking-wider text-primary font-semibold">Multi-Cloud Mesh</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-label-code">AWS + GCP</span>
+</div>
+<p class="font-title-sm text-title-sm text-on-surface mt-1">Resource Pool &amp; Quotas</p>
+<div class="flex items-center gap-space-sm mt-2 text-outline font-label-mono-sm text-label-mono-sm font-label-code">
+<span class="">CPU: 42%</span>
+<span class="">•</span>
+<span class="">MEM: 61%</span>
+<span class="">•</span>
+<span class="">IOPS: 4.2k</span>
+</div>
+</div>
+<div class="p-space-md rounded bg-surface-container-low shadow-sm">
+<span class="font-badge-caps text-badge-caps uppercase tracking-wider text-secondary font-semibold block mb-1">Instant Recovery</span>
+<p class="font-title-sm text-title-sm text-on-surface">Auto-Rollback Triggered</p>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary font-label-code block mt-0.5">0.00% Error Budget Lost</span>
+</div>
+</div>
+</div>
+<!-- Real-time Terminal Log Streamer Footprint -->
+<div class="mt-space-md p-space-md rounded bg-surface-container text-left font-label-code text-label-code">
+<div class="flex items-center justify-between pb-2 mb-2 text-outline font-label-telemetry text-label-telemetry">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary"></span> STREAMING ENGINE · WS CONNECTED</span>
+<span class="text-xs">BUFFER: 100 LINES</span>
+</div>
+<div class="space-y-1 text-on-surface-variant font-label-code">
+<p class=""><span class="text-outline">16:42:01.102</span> <span class="text-secondary">[INFO]</span> [K8s-Operator] Pod rollout `billing-gateway-v4` scaled to 12 replicas across us-east-1a, 1b.</p>
+<p class=""><span class="text-outline">16:42:02.481</span> <span class="text-primary">[TRACE]</span> [ArgoCD] Sync completed with Git commit hash <span class="text-primary underline">#8f3a09c</span> (author: devops-lead).</p>
+<p class=""><span class="text-outline">16:42:03.914</span> <span class="text-secondary">[INFO]</span> [Terraform-Agent] Spec reconciled without drift in 1.48s. Multi-cloud ingress rules updated.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Integration Ecosystem Ribbon -->
+<section class="w-full bg-surface-container-lowest py-space-lg px-gutter shadow-sm">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="text-left">
+<span class="font-badge-caps text-badge-caps uppercase text-outline tracking-wider font-semibold">Integrations</span>
+<p class="font-title-sm text-title-sm text-on-surface">Native connectivity across your modern stack</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-md sm:gap-space-lg text-outline">
+<div class="flex items-center gap-1.5 font-label-telemetry text-label-telemetry hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">code</span> GitHub
+        </div>
+<div class="flex items-center gap-1.5 font-label-telemetry text-label-telemetry hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">view_in_ar</span> Docker
+        </div>
+<div class="flex items-center gap-1.5 font-label-telemetry text-label-telemetry hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">grid_view</span> Kubernetes
+        </div>
+<div class="flex items-center gap-1.5 font-label-telemetry text-label-telemetry hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">cloud_queue</span> AWS &amp; GCP
+        </div>
+<div class="flex items-center gap-1.5 font-label-telemetry text-label-telemetry hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">layers</span> Terraform
+        </div>
+<div class="flex items-center gap-1.5 font-label-telemetry text-label-telemetry hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">monitoring</span> Datadog &amp; Prometheus
+        </div>
+<div class="flex items-center gap-1.5 font-label-telemetry text-label-telemetry hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">chat</span> Slack
+        </div>
+</div>
+</div>
+</section>
+<!-- Platform Overview: 4-Step Operational Flow -->
+<section class="w-full px-gutter py-20 max-w-7xl mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-14">
+<span class="font-badge-caps text-badge-caps uppercase tracking-wider text-primary font-semibold">Continuous Reliability Lifecycle</span>
+<h2 class="font-headline-lg text-headline-lg md:text-headline-xl text-on-surface mt-space-xs font-bold">Connect → Monitor → Analyze → Operate</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+        Eliminate the fog of multi-tool fragmentation. OmniOPS provides automated synchronicity across every tier of deployment and operational response.
+      </p>
+</div>
+<!-- 4 Cards Flow -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Step 1 -->
+<div class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group">
+<div>
+<div class="w-10 h-10 rounded bg-primary/10 text-primary flex items-center justify-center font-label-mono-sm text-label-mono-sm font-label-code font-bold mb-space-md group-hover:bg-primary group-hover:text-on-primary transition-colors">
+            01
+          </div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Connect</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+            One-line cluster hook or CLI login. Automatically ingests manifests, state files, registries, and IAM policies.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-sm font-label-telemetry text-label-telemetry text-primary flex items-center gap-1">
+          Auto-Discovery <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group">
+<div>
+<div class="w-10 h-10 rounded bg-secondary/10 text-secondary flex items-center justify-center font-label-mono-sm text-label-mono-sm font-label-code font-bold mb-space-md group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+            02
+          </div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Monitor</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+            High-cadence Prometheus matrix aggregation, container heartbeat tracking, and sub-second distributed trace sampling.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-sm font-label-telemetry text-label-telemetry text-secondary flex items-center gap-1">
+          40ms Telemetry <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group">
+<div>
+<div class="w-10 h-10 rounded bg-tertiary/10 text-tertiary flex items-center justify-center font-label-mono-sm text-label-mono-sm font-label-code font-bold mb-space-md group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+            03
+          </div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Analyze</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+            Autonomous anomaly detector isolates cascading pod failures and infrastructure bottlenecks before customers notice.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-sm font-label-telemetry text-label-telemetry text-tertiary flex items-center gap-1">
+          AI Diagnostics <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group">
+<div>
+<div class="w-10 h-10 rounded bg-primary-container/20 text-primary-container flex items-center justify-center font-label-mono-sm text-label-mono-sm font-label-code font-bold mb-space-md group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+            04
+          </div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Operate</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+            Instant remediation runs, rollbacks, blue/green canary promotions, and cluster scaling from web UI or local terminal.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-sm font-label-telemetry text-label-telemetry text-primary flex items-center gap-1">
+          Instant Action <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Complete 12-Module Feature Showcase Grid -->
+<section class="w-full px-gutter py-16 bg-surface-container-lowest shadow-inner">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-space-md">
+<div>
+<span class="font-badge-caps text-badge-caps uppercase tracking-wider text-primary font-semibold">Platform Architecture</span>
+<h2 class="font-headline-lg text-headline-lg md:text-headline-xl text-on-surface mt-1 font-bold">12 Mission-Critical Modules</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-xl">
+            Engineered as an interconnected operational matrix. Launch individual tools or power your full infrastructure mesh.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-label-code">ALL MODULES ACTIVE · V2.4-READY</span>
+</div>
+</div>
+<!-- 12 Modules Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Module 1: Command Center -->
+<a class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group" data-path="command-center" href="#">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">space_dashboard</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-primary font-label-code">HUD 60fps</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Command Center</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+              Live multi-region telemetry heads-up display. High-density overview of cluster health, incidents, and node status.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center text-primary font-body-sm text-body-sm font-medium">
+            Explore module <span class="material-symbols-outlined text-[16px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Module 2: GitHub -->
+<a class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group" data-path="github" href="#">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded bg-surface-container-highest text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">code_blocks</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-secondary font-label-code">Webhooks 0ms</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold group-hover:text-primary transition-colors">GitHub Sync</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+              Deep repository tracking, branch-level environment dispatch, PR status verification, and automated commit hooks.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center text-primary font-body-sm text-body-sm font-medium">
+            Explore module <span class="material-symbols-outlined text-[16px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Module 3: CI/CD -->
+<a class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group" data-path="ci-cd" href="#">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded bg-secondary/10 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">alt_route</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-secondary font-label-code">Pipelines · 98.9%</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold group-hover:text-primary transition-colors">CI/CD Engine</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+              Automated build graph execution, parallelized test matrix, zero-downtime rolling releases, and canary gates.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center text-primary font-body-sm text-body-sm font-medium">
+            Explore module <span class="material-symbols-outlined text-[16px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Module 4: Docker -->
+<a class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group" data-path="docker" href="#">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded bg-primary-fixed-dim/10 text-primary-fixed-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">view_in_ar</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-outline font-label-code">Registry v2</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Docker Registry</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+              Multi-architecture container image builds, layer vulnerability audits, automated CVE flagging, and image prune tasks.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center text-primary font-body-sm text-body-sm font-medium">
+            Explore module <span class="material-symbols-outlined text-[16px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Module 5: Kubernetes -->
+<a class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group" data-path="kubernetes" href="#">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">token</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-primary font-label-code">14 Clusters</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Kubernetes Mesh</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+              Visual pod topology explorer, helm release manager, ingress debugger, and cluster autoscale configuration.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center text-primary font-body-sm text-body-sm font-medium">
+            Explore module <span class="material-symbols-outlined text-[16px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Module 6: Monitoring -->
+<a class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group" data-path="monitoring" href="#">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded bg-secondary/10 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">monitoring</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-secondary font-label-code">12.4k req/s</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold group-hover:text-primary transition-colors">APM &amp; Monitoring</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+              Sub-second metrics collection, SLO/SLA burn rates, p99 latency heatmaps, and synthetic endpoint monitors.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center text-primary font-body-sm text-body-sm font-medium">
+            Explore module <span class="material-symbols-outlined text-[16px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Module 7: Logging -->
+<a class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group" data-path="logging" href="#">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded bg-tertiary/10 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">terminal</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-tertiary font-label-code">Live Tail</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Log Streamer</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+              Indexed elastic search across all container stdout/stderr. Regex filters, saved queries, and automated stack-trace parsing.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center text-primary font-body-sm text-body-sm font-medium">
+            Explore module <span class="material-symbols-outlined text-[16px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Module 8: Cloud -->
+<a class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group" data-path="cloud" href="#">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">cloud</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-outline font-label-code">Multi-Region</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Cloud Topology</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+              Unified control plane across AWS, GCP, and bare metal nodes. Ingress mapping and global egress cost intelligence.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center text-primary font-body-sm text-body-sm font-medium">
+            Explore module <span class="material-symbols-outlined text-[16px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Module 9: Incidents -->
+<a class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group" data-path="incidents" href="#">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded bg-error/10 text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">crisis_alert</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-secondary font-label-code">0 Active P0</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Incident Command</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+              On-call paging, automated war-room orchestration, post-mortem generation, and cross-channel Slack timeline sync.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center text-primary font-body-sm text-body-sm font-medium">
+            Explore module <span class="material-symbols-outlined text-[16px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Module 10: Terraform -->
+<a class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group" data-path="terraform" href="#">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded bg-tertiary-container/10 text-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">reorder</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-tertiary font-label-code">State Locked</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Terraform State</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+              Remote state management, drift detection, speculative plans on pull requests, and automated IaC cost projections.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center text-primary font-body-sm text-body-sm font-medium">
+            Explore module <span class="material-symbols-outlined text-[16px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Module 11: Teams & RBAC -->
+<a class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group" data-path="teams" href="#">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">admin_panel_settings</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-outline font-label-code">SAML / SCIM</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Teams &amp; RBAC</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+              Granular access control down to namespace and secret keys. Temporary break-glass access credentials with full audit log.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center text-primary font-body-sm text-body-sm font-medium">
+            Explore module <span class="material-symbols-outlined text-[16px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Module 12: AI Assistant -->
+<a class="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group" data-path="ai-assistant" href="#">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded bg-secondary/10 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">psychology</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-secondary font-label-code">Copilot AI</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Diagnostic AI Assistant</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+              SRE Copilot trained on Kubernetes primitives and cloud logs. Ask questions in natural language and receive executable fixes.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center text-primary font-body-sm text-body-sm font-medium">
+            Explore module <span class="material-symbols-outlined text-[16px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Web + CLI Synergy Section -->
+<section class="w-full px-gutter py-20 max-w-7xl mx-auto" id="cli-synergy">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Text Description -->
+<div class="lg:col-span-6 text-left">
+<span class="font-badge-caps text-badge-caps uppercase tracking-wider text-primary font-semibold">Web + CLI Synergy</span>
+<h2 class="font-headline-lg text-headline-lg md:text-headline-xl text-on-surface mt-space-xs font-bold leading-tight">
+          Two Interfaces. One Unified Operational Brain.
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-md leading-relaxed">
+          Never choose between the convenience of a modern browser HUD and the blazing speed of terminal keybindings. What you dispatch via terminal updates on your team's command board instantaneously.
+        </p>
+<div class="space-y-space-md mt-space-lg">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px] mt-0.5">sync_alt</span>
+<div>
+<p class="font-title-sm text-title-sm text-on-surface font-semibold">Bidirectional State Streaming</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">CLI commands broadcast SSE notifications to browser sessions in less than 20 milliseconds.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">lock_clock</span>
+<div>
+<p class="font-title-sm text-title-sm text-on-surface font-semibold">Zero Token Expiry Hassles</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">SSO device authentication connects your terminal using hardware security keys seamlessly.</p>
+</div>
+</div>
+</div>
+<div class="mt-space-xl flex items-center gap-space-md">
+<a class="px-5 py-2.5 bg-primary-container hover:bg-primary text-on-primary-container font-title-sm text-title-sm rounded font-medium shadow-md transition-all" data-path="cli" href="#">
+            Read CLI Documentation
+          </a>
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-label-code">Supports macOS, Linux &amp; Windows</span>
+</div>
+</div>
+<!-- Live Interactive Terminal Widget -->
+<div class="lg:col-span-6 bg-surface-container-lowest rounded-xl shadow-2xl p-space-md md:p-space-lg overflow-hidden text-left">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary-container"></span>
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="ml-2 font-label-code text-label-code text-outline">bash — omniops-cli</span>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-bright text-primary font-label-mono-sm text-label-mono-sm font-label-code transition-colors" id="copy-cli-btn" onclick="navigator.clipboard.writeText('npm install -g omniops'); this.innerHTML='&lt;span class=\'material-symbols-outlined text-[14px]\'&gt;check&lt;/span&gt; Copied!'; setTimeout(() =&gt; this.innerHTML='&lt;span class=\'material-symbols-outlined text-[14px]\'&gt;content_copy&lt;/span&gt; Copy', 2000);">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> Copy
+          </button>
+</div>
+<!-- Terminal Body -->
+<div class="font-label-code text-label-code space-y-2 py-2">
+<!-- Install line -->
+<div class="flex items-center gap-2">
+<span class="text-secondary">$</span>
+<span class="text-primary font-semibold">npm install -g omniops</span>
+</div>
+<p class="text-outline text-xs">+ omniops@2.4.0 installed in 1.82s</p>
+<div class="pt-2 flex items-center gap-2">
+<span class="text-secondary">$</span>
+<span class="text-on-surface">omniops login --sso</span>
+</div>
+<p class="text-secondary text-xs">✔ Authenticated as architect@acme-corp.io via Okta SSO</p>
+<div class="pt-2 flex items-center gap-2">
+<span class="text-secondary">$</span>
+<span class="text-on-surface">omniops cluster status</span>
+</div>
+<div class="text-on-surface-variant text-xs space-y-0.5 bg-surface-container p-2.5 rounded">
+<p class="">CLUSTER           STATUS    NODES   PODS    LOAD    REGION</p>
+<p class=""><span class="text-primary">prod-us-east-1</span>    HEALTHY   24      180     0.42    us-east-1</p>
+<p class=""><span class="text-primary">prod-eu-west-1</span>    HEALTHY   18      124     0.38    eu-west-1</p>
+<p class=""><span class="text-primary">prod-ap-east-1</span>    HEALTHY   12      86      0.29    ap-east-1</p>
+</div>
+<div class="pt-2 flex items-center gap-2">
+<span class="text-secondary">$</span>
+<span class="text-on-surface">omniops pipeline watch --latest</span>
+</div>
+<p class="text-primary text-xs flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span> Live watching #4088: release-v2.4 [DEPLOY_CANARY: 60%]
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Enterprise Security & Compliance Section -->
+<section class="w-full bg-surface-container py-16 px-gutter shadow-sm">
+<div class="max-w-7xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="font-badge-caps text-badge-caps uppercase tracking-wider text-secondary font-semibold">Battle-Tested Governance</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1 font-bold">Enterprise Security &amp; Compliance</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Architected for sensitive government, financial, and healthcare workloads with zero compromise on agility.
+        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md text-left">
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-[28px] text-primary mb-2">verified_user</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">SOC2 Type II</h4>
+<p class="font-body-sm text-body-sm text-outline mt-1">Annual third-party attestation reports available under mutual NDA.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-[28px] text-secondary mb-2">policy</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">ISO 27001</h4>
+<p class="font-body-sm text-body-sm text-outline mt-1">Strict information security management and continuous automated audits.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-[28px] text-tertiary mb-2">key</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">E2E Encryption</h4>
+<p class="font-body-sm text-body-sm text-outline mt-1">mTLS in transit and AES-256 GCM envelope encryption for all secrets.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-[28px] text-primary-fixed mb-2">shield_person</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">Zero-Trust RBAC</h4>
+<p class="font-body-sm text-body-sm text-outline mt-1">Least-privilege by default with instant revocations and IP fences.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-[28px] text-on-surface mb-2">history</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">Audit Trails</h4>
+<p class="font-body-sm text-body-sm text-outline mt-1">Immutable tamper-proof write log of all human and automated actions.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive FAQ Section -->
+<section class="w-full px-gutter py-20 max-w-4xl mx-auto">
+<div class="text-center mb-12">
+<span class="font-badge-caps text-badge-caps uppercase tracking-wider text-primary font-semibold">Have Questions?</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1 font-bold">Frequently Asked Questions</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Everything you need to know about adopting OmniOPS.</p>
+</div>
+<div class="space-y-space-md text-left">
+<!-- FAQ 1 -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm cursor-pointer transition-colors" onclick="this.querySelector('.faq-content').classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');">
+<div class="flex items-center justify-between">
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Can OmniOPS be deployed on-premise or air-gapped?</h3>
+<span class="material-symbols-outlined faq-icon text-outline text-[20px] transition-transform duration-200">expand_more</span>
+</div>
+<div class="faq-content hidden mt-3 pt-3 font-body-sm text-body-sm text-on-surface-variant border-t border-surface-container-highest">
+          Yes. OmniOPS Enterprise includes self-hosted Helm charts that can be installed on private Kubernetes clusters, AWS GovCloud, or isolated bare-metal servers with no external outbound connectivity requirements.
+        </div>
+</div>
+<!-- FAQ 2 -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm cursor-pointer transition-colors" onclick="this.querySelector('.faq-content').classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');">
+<div class="flex items-center justify-between">
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Is the OmniOPS CLI free for developers?</h3>
+<span class="material-symbols-outlined faq-icon text-outline text-[20px] transition-transform duration-200">expand_more</span>
+</div>
+<div class="faq-content hidden mt-3 pt-3 font-body-sm text-body-sm text-on-surface-variant border-t border-surface-container-highest">
+          Yes! The CLI client is 100% free and open-source. Any individual developer can link their local Docker daemon, minikube or GitHub repos directly without a paid subscription.
+        </div>
+</div>
+<!-- FAQ 3 -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm cursor-pointer transition-colors" onclick="this.querySelector('.faq-content').classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');">
+<div class="flex items-center justify-between">
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Does OmniOPS replace GitHub Actions or ArgoCD?</h3>
+<span class="material-symbols-outlined faq-icon text-outline text-[20px] transition-transform duration-200">expand_more</span>
+</div>
+<div class="faq-content hidden mt-3 pt-3 font-body-sm text-body-sm text-on-surface-variant border-t border-surface-container-highest">
+          No, it acts as an intelligent orchestration layer on top of them. You can continue running your existing GitHub Actions, GitLab CI, or ArgoCD workflows; OmniOPS unifies their triggers, statuses, logs, and canary controls in one interface.
+        </div>
+</div>
+<!-- FAQ 4 -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm cursor-pointer transition-colors" onclick="this.querySelector('.faq-content').classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');">
+<div class="flex items-center justify-between">
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">How does the Diagnostic AI Assistant ensure security?</h3>
+<span class="material-symbols-outlined faq-icon text-outline text-[20px] transition-transform duration-200">expand_more</span>
+</div>
+<div class="faq-content hidden mt-3 pt-3 font-body-sm text-body-sm text-on-surface-variant border-t border-surface-container-highest">
+          The AI engine analyzes abstracted telemetry, anonymized stack traces, and cluster topology without sending customer PII or sensitive secret payloads to third parties. Dedicated private model VPC options are available.
+        </div>
+</div>
+</div>
+</section>
+<!-- Final Call to Action Banner -->
+<section class="w-full px-gutter py-16 bg-gradient-to-b from-surface to-surface-container-lowest">
+<div class="max-w-5xl mx-auto rounded-2xl bg-surface-container-high p-8 md:p-14 shadow-2xl relative overflow-hidden text-center">
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/20 blur-3xl pointer-events-none rounded-full"></div>
+<div class="absolute -left-20 -top-20 w-80 h-80 bg-secondary/15 blur-3xl pointer-events-none rounded-full"></div>
+<span class="font-badge-caps text-badge-caps uppercase tracking-wider text-primary font-semibold">Start In 5 Minutes</span>
+<h2 class="font-headline-xl text-headline-xl md:text-[42px] md:leading-[48px] text-on-surface mt-2 font-bold max-w-2xl mx-auto">
+        Transform Your Infrastructure Into an Autonomous Command Engine
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-3 max-w-xl mx-auto">
+        Join hundreds of high-growth engineering teams who have simplified their SRE stack with OmniOPS.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-space-md mt-8">
+<a class="px-8 py-3.5 bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-title-sm text-title-sm rounded font-bold shadow-[0_0_24px_rgba(6,182,212,0.4)] transition-all" data-path="signup" href="#">
+          Deploy OmniOPS Free
+        </a>
+<a class="px-6 py-3.5 bg-surface-container hover:bg-surface-bright text-on-surface font-title-sm text-title-sm rounded font-medium transition-all" data-path="demo" href="#">
+          Book Architecture Review
+        </a>
+</div>
+<div class="mt-6 font-label-mono-sm text-label-mono-sm text-outline font-label-code">
+        Free 14-day Enterprise trial · No credit card required · Instant GitHub OAuth
+      </div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_8px_rgba(0,0,0,0.3)] pt-space-xl pb-space-lg"><div class="w-full px-gutter"><div class="grid grid-cols-2 md:grid-cols-5 gap-space-lg mb-space-xl"><div class="col-span-2"><div class="flex items-center gap-space-sm mb-space-md"><img alt="OmniOPS Wordmark Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UmXp1HmzYUKQ_xvS-kaVIzKPGVJWYP7JM0TT4jDBA7rHKkhizzhDhjMfnZWn9WBKQtmtqmTKEp_lyfEBpLxVWTFnaV9EzumUXSNgcZ0x2lxdcAGCSRzHDI4O-pEFC1gTP7b-I5XQgJRijX8jr4Ml39JOeo4-SmAX_kJQQ2eSsCe6JpcL5wMIzu5NLxKR-Zp-SemYn-WQLpfauakwpO-XhJBB2Tf6nTMOSw3K2aD2Qx"><span class="font-headline-md text-headline-md text-primary tracking-tight">OmniOPS</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mb-space-md">Autonomous site reliability &amp; mission-critical orchestration platform engineered for distributed cloud infrastructure.</p><div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-high"><span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(78,222,163,0.5)] animate-pulse"></span><span class="font-label-telemetry text-label-telemetry text-secondary uppercase">All Systems Operational</span><span class="font-label-mono-sm text-label-mono-sm text-outline font-label-code">99.998% SLA</span></div></div><div><h4 class="font-badge-caps text-badge-caps uppercase text-outline mb-space-md">Solutions</h4><ul class="space-y-space-xs font-body-sm text-body-sm"><li class="text-on-surface-variant">SRE Automation</li><li class="text-on-surface-variant">Multi-Cloud Mesh</li><li class="text-on-surface-variant">Kubernetes Fabric</li><li class="text-on-surface-variant">Incident Command</li></ul></div><div><h4 class="font-badge-caps text-badge-caps uppercase text-outline mb-space-md">Developers</h4><ul class="space-y-space-xs font-body-sm text-body-sm"><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="cli" href="#">Omni CLI</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="docs" href="#">REST &amp; gRPC API</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="github" href="#">GitHub Integration</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="terraform" href="#">Terraform Provider</a></li></ul></div><div><h4 class="font-badge-caps text-badge-caps uppercase text-outline mb-space-md">System</h4><ul class="space-y-space-xs font-body-sm text-body-sm"><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="status" href="#">Platform Status</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy" href="#">Privacy Policy</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms" href="#">Terms of Service</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="pricing" href="#">Pricing Tiers</a></li></ul></div></div><div class="flex flex-col sm:flex-row items-center justify-between pt-space-lg bg-surface-container-lowest/50 gap-space-sm"><p class="font-label-mono-sm text-label-mono-sm text-outline font-label-code">© 2025 OmniOPS Inc. Aerospace-grade telemetry architecture.</p><div class="flex items-center gap-space-lg"><a class="font-label-telemetry text-label-telemetry text-outline hover:text-secondary transition-colors" data-path="status" href="#">Global Nodes: 1,024 Online</a><a class="font-label-telemetry text-label-telemetry text-outline hover:text-primary transition-colors" data-path="docs" href="#">v3.18.4-stable</a></div></div></div></footer></body></html>

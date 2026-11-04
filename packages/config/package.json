@@ -1,0 +1,12 @@
+{
+  "name": "@omniops/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    "./eslint": "./src/eslint.js",
+    "./prettier": "./src/prettier.json",
+    "./tailwind": "./src/tailwind-tokens.js"
+  }
+}

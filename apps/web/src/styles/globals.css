@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* LIGHT MODE VARIABLES */
+  :root {
+    --surface: #ffffff;
+    --surface-dim: #f8fafc;
+    --surface-bright: #ffffff;
+    --surface-container-lowest: #f8fafc;
+    --surface-container-low: #f1f5f9;
+    --surface-container: #ffffff;
+    --surface-container-high: #e2e8f0;
+    --surface-container-highest: #cbd5e1;
+
+    --on-surface: #0f172a;
+    --on-surface-variant: #475569;
+    --inverse-surface: #0f131c;
+    --inverse-on-surface: #dfe2ee;
+
+    --primary: #0284c7;
+    --primary-container: #0284c7;
+    --on-primary: #ffffff;
+    --on-primary-container: #ffffff;
+
+    --secondary: #059669;
+    --secondary-container: #059669;
+    --on-secondary: #ffffff;
+
+    --tertiary: #7c3aed;
+    --tertiary-container: #7c3aed;
+    --on-tertiary: #ffffff;
+
+    --error: #ef4444;
+    --error-container: #fee2e2;
+    --on-error: #ffffff;
+
+    --outline: #94a3b8;
+    --outline-variant: #e2e8f0;
+  }
+
+  /* DARK MODE VARIABLES (Mission-Critical Cyber-Industrial Control Room) */
+  .dark {
+    --surface: #0f131c;
+    --surface-dim: #0f131c;
+    --surface-bright: #353942;
+    --surface-container-lowest: #0a0e16;
+    --surface-container-low: #181c24;
+    --surface-container: #1c2028;
+    --surface-container-high: #262a33;
+    --surface-container-highest: #31353e;
+
+    --on-surface: #dfe2ee;
+    --on-surface-variant: #bcc9cd;
+    --inverse-surface: #dfe2ee;
+    --inverse-on-surface: #2c3039;
+
+    --primary: #4cd7f6;
+    --primary-container: #06b6d4;
+    --on-primary: #003640;
+    --on-primary-container: #00424f;
+
+    --secondary: #4edea3;
+    --secondary-container: #00a572;
+    --on-secondary: #003824;
+
+    --tertiary: #d0bcff;
+    --tertiary-container: #b395ff;
+    --on-tertiary: #3c0091;
+
+    --error: #ffb4ab;
+    --error-container: #93000a;
+    --on-error: #690005;
+
+    --outline: #869397;
+    --outline-variant: #3d494c;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--surface);
+    color: var(--on-surface);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--outline-variant);
+    border-radius: 9999px;
+  }
+}
