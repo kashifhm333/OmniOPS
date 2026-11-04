@@ -32,19 +32,25 @@ export default {
           DEFAULT: "var(--primary)",
           container: "var(--primary-container)",
           "on-primary": "var(--on-primary)",
-          "on-primary-container": "var(--on-primary-container)"
+          "on-primary-container": "var(--on-primary-container)",
+          fixed: "#acedff",
+          "fixed-dim": "#4cd7f6"
         },
         // Health / Success (Emerald)
         secondary: {
           DEFAULT: "var(--secondary)",
           container: "var(--secondary-container)",
-          "on-secondary": "var(--on-secondary)"
+          "on-secondary": "var(--on-secondary)",
+          fixed: "#6ffbbe",
+          "fixed-dim": "#4edea3"
         },
         // AI / Orchestration (Violet)
         tertiary: {
           DEFAULT: "var(--tertiary)",
           container: "var(--tertiary-container)",
-          "on-tertiary": "var(--on-tertiary)"
+          "on-tertiary": "var(--on-tertiary)",
+          fixed: "#e9ddff",
+          "fixed-dim": "#d0bcff"
         },
         // Error / Alert (Rose)
         error: {
@@ -62,19 +68,37 @@ export default {
         sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
         mono: ["JetBrains Mono", "Menlo", "Monaco", "Consolas", "monospace"],
         "headline-xl": ["Inter", "sans-serif"],
+        "headline-lg": ["Inter", "sans-serif"],
+        "headline-md": ["Inter", "sans-serif"],
+        "title-sm": ["Inter", "sans-serif"],
+        "body-md": ["Inter", "sans-serif"],
+        "body-sm": ["Inter", "sans-serif"],
         "label-code": ["JetBrains Mono", "monospace"],
         "label-telemetry": ["JetBrains Mono", "monospace"],
         "label-mono-sm": ["JetBrains Mono", "monospace"],
         "badge-caps": ["Inter", "sans-serif"]
       },
+      fontSize: {
+        "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "headline-xl-mobile": ["26px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "700" }],
+        "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }],
+        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+        "title-sm": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+        "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+        "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+        "label-code": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+        "label-telemetry": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+        "label-mono-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "500" }],
+        "badge-caps": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }]
+      },
       borderRadius: {
         DEFAULT: "0.125rem",
         sm: "0.125rem",
         md: "0.25rem",
-        lg: "0.375rem",
+        lg: "0.25rem",
         xl: "0.5rem",
         "2xl": "0.75rem",
-        full: "9999px"
+        full: "0.75rem"
       },
       spacing: {
         gutter: "1rem",

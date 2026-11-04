@@ -4,7 +4,8 @@ import { useTheme } from "../../context/ThemeContext.jsx";
 import { useAuth } from "../../context/AuthContext.jsx";
 import { 
   Sun, Moon, LayoutDashboard, GitBranch, Terminal, Shield, 
-  Boxes, Server, AlertTriangle, Layers, Users, Sparkles, ChevronDown, LogOut
+  Boxes, Server, AlertTriangle, Layers, Users, Sparkles, ChevronDown, LogOut,
+  Activity, Cloud, Cpu, HardDrive
 } from "lucide-react";
 
 export function Header() {
@@ -17,6 +18,21 @@ export function Header() {
     await logout();
     navigate("/");
   };
+
+  const platformModules = [
+    { title: "Command Center", desc: "Unified telemetry HUD", icon: LayoutDashboard, path: "/dashboard", color: "text-primary" },
+    { title: "GitHub", desc: "Repo & sync webhooks", icon: GitBranch, path: "/dashboard/cicd", color: "text-secondary" },
+    { title: "CI/CD", desc: "Pipeline automations", icon: Layers, path: "/dashboard/cicd", color: "text-tertiary" },
+    { title: "Docker", desc: "Image registry & builds", icon: Server, path: "/dashboard/docker", color: "text-primary" },
+    { title: "Kubernetes", desc: "Cluster mesh operator", icon: Boxes, path: "/dashboard/kubernetes", color: "text-primary" },
+    { title: "Monitoring", desc: "APM & node matrix", icon: Activity, path: "/dashboard/monitoring", color: "text-secondary" },
+    { title: "Logging", desc: "Log streamer console", icon: Terminal, path: "/dashboard/logs", color: "text-tertiary" },
+    { title: "Cloud", desc: "Multi-region topology", icon: Cloud, path: "/features", color: "text-primary" },
+    { title: "Incidents", desc: "SRE war room alerts", icon: AlertTriangle, path: "/dashboard/incidents", color: "text-error" },
+    { title: "Terraform", desc: "Declarative state engine", icon: Cpu, path: "/features", color: "text-tertiary" },
+    { title: "Teams", desc: "RBAC & security policies", icon: Users, path: "/dashboard/settings", color: "text-outline" },
+    { title: "AI Assistant", desc: "Diagnostic copilot", icon: Sparkles, path: "/features", color: "text-secondary" },
+  ];
 
   return (
     <header className="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-container-high shadow-hud-surface transition-colors">
@@ -52,48 +68,22 @@ export function Header() {
               {platformOpen && (
                 <div className="absolute top-full left-0 mt-1 w-[480px] p-space-md bg-surface-container-low border border-surface-container-high shadow-[0_8px_24px_rgba(0,0,0,0.5)] rounded-xl z-50 animate-in fade-in slide-in-from-top-1 duration-150">
                   <div className="grid grid-cols-2 gap-1.5">
-                    <Link to="/features" className="p-2.5 rounded-lg hover:bg-surface-container transition-colors flex items-start gap-2">
-                      <LayoutDashboard className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                      <div>
-                        <span className="text-xs font-semibold text-on-surface block">Command Center</span>
-                        <span className="text-[11px] text-on-surface-variant block">Unified telemetry HUD</span>
-                      </div>
-                    </Link>
-                    <Link to="/features" className="p-2.5 rounded-lg hover:bg-surface-container transition-colors flex items-start gap-2">
-                      <GitBranch className="w-4 h-4 text-secondary mt-0.5 shrink-0" />
-                      <div>
-                        <span className="text-xs font-semibold text-on-surface block">GitHub &amp; CI/CD</span>
-                        <span className="text-[11px] text-on-surface-variant block">Pipeline &amp; PR sync</span>
-                      </div>
-                    </Link>
-                    <Link to="/features" className="p-2.5 rounded-lg hover:bg-surface-container transition-colors flex items-start gap-2">
-                      <Boxes className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                      <div>
-                        <span className="text-xs font-semibold text-on-surface block">Kubernetes</span>
-                        <span className="text-[11px] text-on-surface-variant block">Multi-cluster mesh</span>
-                      </div>
-                    </Link>
-                    <Link to="/features" className="p-2.5 rounded-lg hover:bg-surface-container transition-colors flex items-start gap-2">
-                      <Terminal className="w-4 h-4 text-tertiary mt-0.5 shrink-0" />
-                      <div>
-                        <span className="text-xs font-semibold text-on-surface block">Centralized Logs</span>
-                        <span className="text-[11px] text-on-surface-variant block">Redacted real-time streams</span>
-                      </div>
-                    </Link>
-                    <Link to="/features" className="p-2.5 rounded-lg hover:bg-surface-container transition-colors flex items-start gap-2">
-                      <AlertTriangle className="w-4 h-4 text-error mt-0.5 shrink-0" />
-                      <div>
-                        <span className="text-xs font-semibold text-on-surface block">Incident Command</span>
-                        <span className="text-[11px] text-on-surface-variant block">SEV triage rooms</span>
-                      </div>
-                    </Link>
-                    <Link to="/features" className="p-2.5 rounded-lg hover:bg-surface-container transition-colors flex items-start gap-2">
-                      <Sparkles className="w-4 h-4 text-tertiary mt-0.5 shrink-0" />
-                      <div>
-                        <span className="text-xs font-semibold text-on-surface block">AI DevOps Copilot</span>
-                        <span className="text-[11px] text-on-surface-variant block">Root cause diagnostics</span>
-                      </div>
-                    </Link>
+                    {platformModules.map((mod, idx) => {
+                      const Icon = mod.icon;
+                      return (
+                        <Link 
+                          key={idx} 
+                          to={mod.path} 
+                          className="p-2.5 rounded-lg hover:bg-surface-container transition-colors flex items-start gap-2"
+                        >
+                          <Icon className={`w-4 h-4 ${mod.color} mt-0.5 shrink-0`} />
+                          <div>
+                            <span className="text-xs font-semibold text-on-surface block">{mod.title}</span>
+                            <span className="text-[11px] text-on-surface-variant block">{mod.desc}</span>
+                          </div>
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -108,11 +98,11 @@ export function Header() {
             <Link to="/cli" className="px-space-sm py-1.5 text-on-surface-variant font-body-md hover:text-on-surface rounded transition-colors">
               CLI
             </Link>
-            <Link to="/pricing" className="px-space-sm py-1.5 text-on-surface-variant font-body-md hover:text-on-surface rounded transition-colors">
-              Pricing
-            </Link>
             <Link to="/docs" className="px-space-sm py-1.5 text-on-surface-variant font-body-md hover:text-on-surface rounded transition-colors">
               Docs
+            </Link>
+            <Link to="/pricing" className="px-space-sm py-1.5 text-on-surface-variant font-body-md hover:text-on-surface rounded transition-colors">
+              Pricing
             </Link>
             <Link to="/status" className="px-space-sm py-1.5 text-on-surface-variant font-body-md hover:text-on-surface rounded transition-colors">
               Status
@@ -180,4 +170,3 @@ export function Header() {
     </header>
   );
 }
-

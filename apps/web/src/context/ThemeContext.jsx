@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 
 const ThemeContext = createContext({
   theme: "dark",
+  setTheme: () => {},
   toggleTheme: () => {}
 });
 
@@ -10,7 +11,7 @@ export function ThemeProvider({ children }) {
     try {
       const saved = localStorage.getItem("omniops_theme");
       if (saved === "light" || saved === "dark") return saved;
-      return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      return "dark"; // Default to dark theme as primary authoritative theme
     } catch {
       return "dark";
     }
@@ -33,11 +34,10 @@ export function ThemeProvider({ children }) {
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
 }
 
 export const useTheme = () => useContext(ThemeContext);
-
