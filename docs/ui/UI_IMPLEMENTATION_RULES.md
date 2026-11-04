@@ -57,3 +57,4 @@ Terminal logs, pod streaming windows, and telemetry visualizers must preserve da
 - **Desktop (1024px+):** Full multi-column dashboard grid, expanded navigation rail (240px) or top mega-menu.
 - **Tablet (768px – 1023px):** Collapsible sidebar rail (64px), stacked 2-column grids.
 - **Mobile (< 768px):** Single-column layout, bottom navigation or collapsible mobile sheet, horizontal table scrolling with pinned labels, fluid margins (`px-4`).
+

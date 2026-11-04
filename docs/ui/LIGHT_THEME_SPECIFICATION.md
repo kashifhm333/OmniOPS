@@ -78,3 +78,4 @@ The light theme leverages `Inter` with tight letter spacing for UI elements and 
 - **Primary Button Hover:** `#0284c7` shifts to `#0369a1` with crisp drop-shadow expansion.
 - **Secondary Button Hover:** Background shifts from `#FFFFFF` to `#F8FAFC` with border `#94A3B8`.
 - **Navigation Links:** Text `#334155` shifts to `#0F172A` with `#F1F5F9` background pill hover.
+

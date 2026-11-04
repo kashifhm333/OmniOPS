@@ -87,3 +87,4 @@ This document provides the bidirectional mapping between shared semantic token n
 | `shadow-hud-cyan` | `0 0 16px rgba(6, 182, 212, 0.35)` | `0 4px 14px rgba(2, 132, 199, 0.25)` |
 | `shadow-hud-emerald`| `0 0 12px rgba(16, 185, 129, 0.3)` | `0 4px 14px rgba(5, 150, 105, 0.2)` |
 | `shadow-hud-red` | `0 0 16px rgba(239, 68, 68, 0.35)` | `0 4px 14px rgba(220, 38, 38, 0.2)` |
+

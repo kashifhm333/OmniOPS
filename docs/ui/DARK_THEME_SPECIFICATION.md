@@ -98,3 +98,4 @@ The dark theme avoids blurry diffuse black shadows, instead leveraging structura
 - **Secondary Button Hover:** Background `#262a33` with border `#4cd7f6`.
 - **Navigation Dropdown:** Slides vertically (`translate-y-1` to `translate-y-0`) with opacity fade, 200ms duration.
 - **Pulse Indicators:** `animate-pulse` on 6px circular emerald pips for live health monitoring.
+

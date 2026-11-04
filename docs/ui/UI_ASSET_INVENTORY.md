@@ -44,3 +44,4 @@ The following fonts are linked in `index.html` as mandated by both design refere
 ### 3.2 Terminal Stream Glass Effect
 - **Dark Theme:** `#05080E` base with `1px solid #1E293B`, subtle scanline effect.
 - **Light Theme:** Preserves dark container `#0F172A` with `1px solid #1E293B` for maximal readability of colored log levels (`[INFO]`, `[WARN]`, `[ERROR]`).
+

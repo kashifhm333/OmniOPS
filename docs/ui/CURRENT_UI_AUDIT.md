@@ -67,3 +67,4 @@ The current frontend is a React 18 Single-Page Application (SPA) bundled with Vi
 ### Deprecate & Replace
 - Ad-hoc custom card implementations scattered across dashboard pages will be replaced by the shared `Card` primitive.
 - Hardcoded table layouts replaced by the standardized `Table` component.
+

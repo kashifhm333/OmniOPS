@@ -55,3 +55,4 @@ This document specifies the complete inventory of standardized, theme-aware Reac
 | `EmptyState` | Icon illustration, title, description, primary CTA | Zero active incidents, empty cluster states |
 | `LoadingState` | Animated spinner, skeleton tracks, monospaced sync text | Data fetching and async mutations |
 | `ErrorState` | Red icon, retry button, technical error trace toggle | Failed network queries, offline control plane |
+

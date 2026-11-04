@@ -47,3 +47,4 @@ export function TableCell({ children, className = "", ...props }) {
     </td>
   );
 }
+
