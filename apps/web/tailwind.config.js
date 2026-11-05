@@ -67,16 +67,16 @@ export default {
       fontFamily: {
         sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
         mono: ["JetBrains Mono", "Menlo", "Monaco", "Consolas", "monospace"],
-        "headline-xl": ["Inter", "sans-serif"],
-        "headline-lg": ["Inter", "sans-serif"],
-        "headline-md": ["Inter", "sans-serif"],
-        "title-sm": ["Inter", "sans-serif"],
-        "body-md": ["Inter", "sans-serif"],
-        "body-sm": ["Inter", "sans-serif"],
-        "label-code": ["JetBrains Mono", "monospace"],
-        "label-telemetry": ["JetBrains Mono", "monospace"],
-        "label-mono-sm": ["JetBrains Mono", "monospace"],
-        "badge-caps": ["Inter", "sans-serif"]
+        "headline-xl": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        "headline-lg": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        "headline-md": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        "title-sm": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        "body-md": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        "body-sm": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        "label-code": ["JetBrains Mono", "Menlo", "Monaco", "Consolas", "monospace"],
+        "label-telemetry": ["JetBrains Mono", "Menlo", "Monaco", "Consolas", "monospace"],
+        "label-mono-sm": ["JetBrains Mono", "Menlo", "Monaco", "Consolas", "monospace"],
+        "badge-caps": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"]
       },
       fontSize: {
         "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],

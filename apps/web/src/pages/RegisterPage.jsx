@@ -38,7 +38,7 @@ export function RegisterPage() {
             <span className="material-symbols-outlined text-[28px]">hub</span>
           </div>
           <h1 className="text-2xl font-bold text-on-surface tracking-tight">Create Organization</h1>
-          <p className="text-xs text-on-surface-variant font-mono mt-1">Deploy an OmniOPS Control Plane</p>
+          <p className="text-xs text-on-surface-variant mt-1">Deploy an OmniOPS Control Plane</p>
         </div>
 
         {error && (
@@ -50,7 +50,7 @@ export function RegisterPage() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-mono font-semibold text-on-surface mb-1.5">
+            <label className="block text-xs font-semibold text-on-surface mb-1.5">
               YOUR FULL NAME
             </label>
             <div className="relative">
@@ -61,14 +61,13 @@ export function RegisterPage() {
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 placeholder="Alex Mercer"
-                mono
                 className="pl-9 pr-3 py-2 text-sm"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-mono font-semibold text-on-surface mb-1.5">
+            <label className="block text-xs font-semibold text-on-surface mb-1.5">
               ORGANIZATION NAME
             </label>
             <div className="relative">
@@ -79,14 +78,13 @@ export function RegisterPage() {
                 value={organizationName}
                 onChange={(e) => setOrganizationName(e.target.value)}
                 placeholder="Acme Cloud Corp"
-                mono
                 className="pl-9 pr-3 py-2 text-sm"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-mono font-semibold text-on-surface mb-1.5">
+            <label className="block text-xs font-semibold text-on-surface mb-1.5">
               WORK EMAIL
             </label>
             <div className="relative">
@@ -97,14 +95,13 @@ export function RegisterPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="alex.devops@acme.com"
-                mono
                 className="pl-9 pr-3 py-2 text-sm"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-mono font-semibold text-on-surface mb-1.5">
+            <label className="block text-xs font-semibold text-on-surface mb-1.5">
               SECURE PASSWORD
             </label>
             <div className="relative">
@@ -116,7 +113,6 @@ export function RegisterPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Minimum 8 characters"
-                mono
                 className="pl-9 pr-3 py-2 text-sm"
               />
             </div>

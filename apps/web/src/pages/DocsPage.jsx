@@ -69,7 +69,7 @@ export function DocsPage() {
       <div className="space-y-12">
         {sections.map((sec, idx) => (
           <div key={idx} className="space-y-4">
-            <h2 className="text-xl font-bold text-on-surface font-mono border-b border-surface-container-high pb-2">
+            <h2 className="text-xl font-bold text-on-surface border-b border-surface-container-high pb-2">
               {sec.category}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

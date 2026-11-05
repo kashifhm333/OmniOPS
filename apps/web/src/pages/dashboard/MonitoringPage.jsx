@@ -113,7 +113,7 @@ export function MonitoringPage() {
 
       {/* Alert Rules & SLO Status */}
       <Card className="p-5 space-y-4">
-        <h2 className="text-sm font-bold font-mono tracking-wider uppercase text-on-surface flex items-center gap-2">
+        <h2 className="text-sm font-bold tracking-wider uppercase text-on-surface flex items-center gap-2">
           <Bell className="w-4 h-4 text-primary" />
           <span>Active Prometheus Alerting Rules</span>
         </h2>

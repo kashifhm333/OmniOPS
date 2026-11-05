@@ -79,7 +79,7 @@ export function CliPage() {
               <h3 className="text-lg font-bold text-on-surface">3 Steps to Terminal Bliss</h3>
               <div className="space-y-4">
                 <div className="p-4 rounded bg-surface-container-low border border-surface-container-high">
-                  <h4 className="font-mono text-sm font-semibold text-primary mb-1">1. Authenticate with Device Grant</h4>
+                  <h4 className="text-sm font-semibold text-primary mb-1">1. Authenticate with Device Grant</h4>
                   <pre className="p-2.5 rounded bg-black text-gray-300 font-mono text-xs overflow-x-auto">
                     $ omniops auth login
                   </pre>
@@ -89,7 +89,7 @@ export function CliPage() {
                 </div>
 
                 <div className="p-4 rounded bg-surface-container-low border border-surface-container-high">
-                  <h4 className="font-mono text-sm font-semibold text-primary mb-1">2. Check Cluster Status</h4>
+                  <h4 className="text-sm font-semibold text-primary mb-1">2. Check Cluster Status</h4>
                   <pre className="p-2.5 rounded bg-black text-gray-300 font-mono text-xs overflow-x-auto">
                     $ omniops status
                   </pre>
@@ -99,7 +99,7 @@ export function CliPage() {
                 </div>
 
                 <div className="p-4 rounded bg-surface-container-low border border-surface-container-high">
-                  <h4 className="font-mono text-sm font-semibold text-primary mb-1">3. Tail Pod Logs with Redaction</h4>
+                  <h4 className="text-sm font-semibold text-primary mb-1">3. Tail Pod Logs with Redaction</h4>
                   <pre className="p-2.5 rounded bg-black text-gray-300 font-mono text-xs overflow-x-auto">
                     $ omniops k8s logs api-gateway -n production --tail 50
                   </pre>

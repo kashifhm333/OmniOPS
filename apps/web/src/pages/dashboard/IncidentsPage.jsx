@@ -222,7 +222,7 @@ export function IncidentsPage() {
 
                 {/* Title and Detail */}
                 <div>
-                  <h3 className="text-base font-bold text-on-surface font-mono">
+                  <h3 className="text-base font-bold text-on-surface">
                     {incident.title}
                   </h3>
                   <div className="flex items-center gap-4 text-xs font-mono text-outline mt-1.5">

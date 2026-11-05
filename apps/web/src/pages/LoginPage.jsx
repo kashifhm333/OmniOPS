@@ -52,7 +52,7 @@ export function LoginPage() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-mono font-semibold text-on-surface mb-1.5">
+            <label className="block text-xs font-semibold text-on-surface mb-1.5">
               EMAIL ADDRESS
             </label>
             <div className="relative">
@@ -63,7 +63,6 @@ export function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="developer@company.com"
-                mono
                 className="pl-9 pr-3 py-2 text-sm"
               />
             </div>
@@ -71,10 +70,10 @@ export function LoginPage() {
 
           <div>
             <div className="flex items-center justify-between mb-1.5">
-              <label className="block text-xs font-mono font-semibold text-on-surface">
+              <label className="block text-xs font-semibold text-on-surface">
                 PASSWORD
               </label>
-              <a href="#" className="text-xs text-primary hover:underline font-mono">Forgot?</a>
+              <a href="#" className="text-xs text-primary hover:underline">Forgot?</a>
             </div>
             <div className="relative">
               <Lock className="w-4 h-4 text-outline absolute left-3 top-3 pointer-events-none" />
@@ -84,7 +83,6 @@ export function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••••••"
-                mono
                 className="pl-9 pr-3 py-2 text-sm"
               />
             </div>

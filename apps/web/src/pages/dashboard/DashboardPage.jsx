@@ -212,11 +212,11 @@ export function DashboardPage() {
         {/* Left 2 Cols: Connected Kubernetes Clusters */}
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-sm font-bold font-mono tracking-wider uppercase text-on-surface flex items-center gap-2">
+            <h2 className="text-sm font-bold tracking-wider uppercase text-on-surface flex items-center gap-2">
               <Boxes className="w-4 h-4 text-primary" />
               <span>Kubernetes Fleet Status</span>
             </h2>
-            <Link to="/dashboard/kubernetes" className="text-xs font-mono text-primary hover:underline flex items-center gap-1">
+            <Link to="/dashboard/kubernetes" className="text-xs text-primary hover:underline flex items-center gap-1">
               <span>View All Fleets</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
@@ -276,11 +276,11 @@ export function DashboardPage() {
         {/* Right 1 Col: Live Audit & Activity Feed */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-sm font-bold font-mono tracking-wider uppercase text-on-surface flex items-center gap-2">
+            <h2 className="text-sm font-bold tracking-wider uppercase text-on-surface flex items-center gap-2">
               <Zap className="w-4 h-4 text-tertiary" />
               <span>Real-time Stream</span>
             </h2>
-            <Link to="/dashboard/audit" className="text-xs font-mono text-tertiary hover:underline flex items-center gap-1">
+            <Link to="/dashboard/audit" className="text-xs text-tertiary hover:underline flex items-center gap-1">
               <span>Audit Ledger</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
