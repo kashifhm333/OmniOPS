@@ -215,11 +215,11 @@ export function HomePage() {
             </span>
           </div>
 
-          {/* Interactive Nucleus HUD Diagram */}
-          <div className="w-full max-w-5xl mt-14 relative bg-surface-container-lowest rounded-xl shadow-2xl p-space-md md:p-space-lg overflow-hidden border border-surface-container-high text-left">
+          {/* Interactive Nucleus HUD Diagram (No white borders - pure tonal depth) */}
+          <div className="w-full max-w-5xl mt-14 relative bg-surface-container-lowest rounded-xl shadow-2xl p-space-md md:p-space-lg overflow-hidden text-left">
             
             {/* Dashboard Top Control Header */}
-            <div className="flex flex-wrap items-center justify-between gap-space-sm pb-space-md mb-space-md border-b border-surface-container-high">
+            <div className="flex flex-wrap items-center justify-between gap-space-sm pb-space-md mb-space-md bg-surface-container-lowest">
               <div className="flex items-center gap-space-sm">
                 <span className="w-3 h-3 rounded-full bg-error"></span>
                 <span className="w-3 h-3 rounded-full bg-tertiary-container"></span>
@@ -241,7 +241,7 @@ export function HomePage() {
               
               {/* Left Column: Developer Capabilities */}
               <div className="lg:col-span-3 flex flex-col gap-space-md text-left">
-                <div className="p-space-md rounded bg-surface-container-low shadow-sm border border-surface-container-high">
+                <div className="p-space-md rounded bg-surface-container-low shadow-sm">
                   <span className="font-badge-caps text-badge-caps uppercase tracking-wider text-primary font-semibold block mb-1">
                     Developer Stream
                   </span>
@@ -251,7 +251,7 @@ export function HomePage() {
                   </p>
                 </div>
 
-                <div className="p-space-md rounded bg-surface-container-low shadow-sm border border-surface-container-high">
+                <div className="p-space-md rounded bg-surface-container-low shadow-sm">
                   <div className="flex items-center justify-between">
                     <span className="font-badge-caps text-badge-caps uppercase tracking-wider text-secondary font-semibold">
                       Active CI Workflows
@@ -264,7 +264,7 @@ export function HomePage() {
                   </div>
                 </div>
 
-                <div className="p-space-md rounded bg-surface-container-low shadow-sm border border-surface-container-high">
+                <div className="p-space-md rounded bg-surface-container-low shadow-sm">
                   <span className="font-badge-caps text-badge-caps uppercase tracking-wider text-outline font-semibold block mb-1">
                     Developer CLI Sync
                   </span>
@@ -275,19 +275,19 @@ export function HomePage() {
                 </div>
               </div>
 
-              {/* Middle Orbit Core Canvas */}
+              {/* Middle Orbit Core Canvas (Concentric rotating circles matching manifest) */}
               <div className="lg:col-span-6 relative flex flex-col items-center justify-center py-6 min-h-[340px]">
-                {/* Decorative concentric circles */}
+                {/* Decorative concentric circles with 60s slow spin */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="w-[320px] h-[320px] rounded-full border border-surface-container-high/40 animate-[spin_60s_linear_infinite] flex items-center justify-center">
-                    <div className="w-[240px] h-[240px] rounded-full border border-surface-container-highest/60 flex items-center justify-center">
-                      <div className="w-[160px] h-[160px] rounded-full border border-primary/30"></div>
+                  <div className="w-[320px] h-[320px] rounded-full bg-surface-container-low/40 animate-[spin_60s_linear_infinite] flex items-center justify-center">
+                    <div className="w-[240px] h-[240px] rounded-full bg-surface-container/60 flex items-center justify-center">
+                      <div className="w-[160px] h-[160px] rounded-full bg-surface-container-high/80"></div>
                     </div>
                   </div>
                 </div>
 
                 {/* Central Hex / Core Node */}
-                <div className="relative z-10 p-5 rounded-full bg-gradient-to-br from-primary-container via-surface-container-high to-tertiary shadow-[0_0_35px_rgba(6,182,212,0.4)] flex flex-col items-center justify-center w-36 h-36 text-center">
+                <div className="relative z-10 p-5 rounded-full bg-gradient-to-br from-primary-container via-surface-container-high to-tertiary-container shadow-[0_0_35px_rgba(6,182,212,0.4)] flex flex-col items-center justify-center w-36 h-36 text-center">
                   <span className="material-symbols-outlined text-[36px] text-on-primary">hub</span>
                   <span className="font-headline-md text-headline-md text-on-primary font-bold mt-1">OMNI</span>
                   <span className="font-label-mono-sm text-label-mono-sm text-on-primary font-label-code tracking-wider uppercase">
@@ -297,15 +297,15 @@ export function HomePage() {
 
                 {/* Orbiting Badges */}
                 <div className="relative z-10 w-full flex items-center justify-between px-2 mt-6">
-                  <div className="px-3 py-1.5 rounded bg-surface-container-high text-center shadow-md border border-surface-container-highest">
+                  <div className="px-3 py-1.5 rounded bg-surface-container-high text-center shadow-md">
                     <span className="font-label-telemetry text-label-telemetry text-secondary block font-semibold">BUILD</span>
                     <span className="font-label-mono-sm text-label-mono-sm text-outline font-label-code">0m 42s avg</span>
                   </div>
-                  <div className="px-3 py-1.5 rounded bg-surface-container-high text-center shadow-md border border-surface-container-highest">
+                  <div className="px-3 py-1.5 rounded bg-surface-container-high text-center shadow-md">
                     <span className="font-label-telemetry text-label-telemetry text-primary block font-semibold">DEPLOY</span>
                     <span className="font-label-mono-sm text-label-mono-sm text-outline font-label-code">Canary 10%</span>
                   </div>
-                  <div className="px-3 py-1.5 rounded bg-surface-container-high text-center shadow-md border border-surface-container-highest">
+                  <div className="px-3 py-1.5 rounded bg-surface-container-high text-center shadow-md">
                     <span className="font-label-telemetry text-label-telemetry text-tertiary block font-semibold">OPERATE</span>
                     <span className="font-label-mono-sm text-label-mono-sm text-outline font-label-code">K8s Mesh 3.2</span>
                   </div>
@@ -314,7 +314,7 @@ export function HomePage() {
 
               {/* Right Column: DevOps Capabilities */}
               <div className="lg:col-span-3 flex flex-col gap-space-md text-left">
-                <div className="p-space-md rounded bg-surface-container-low shadow-sm border border-surface-container-high">
+                <div className="p-space-md rounded bg-surface-container-low shadow-sm">
                   <span className="font-badge-caps text-badge-caps uppercase tracking-wider text-tertiary font-semibold block mb-1">
                     DevOps Control
                   </span>
@@ -324,7 +324,7 @@ export function HomePage() {
                   </p>
                 </div>
 
-                <div className="p-space-md rounded bg-surface-container-low shadow-sm border border-surface-container-high">
+                <div className="p-space-md rounded bg-surface-container-low shadow-sm">
                   <div className="flex items-center justify-between">
                     <span className="font-badge-caps text-badge-caps uppercase tracking-wider text-primary font-semibold">
                       Multi-Cloud Mesh
@@ -341,7 +341,7 @@ export function HomePage() {
                   </div>
                 </div>
 
-                <div className="p-space-md rounded bg-surface-container-low shadow-sm border border-surface-container-high">
+                <div className="p-space-md rounded bg-surface-container-low shadow-sm">
                   <span className="font-badge-caps text-badge-caps uppercase tracking-wider text-secondary font-semibold block mb-1">
                     Instant Recovery
                   </span>
@@ -354,10 +354,10 @@ export function HomePage() {
             </div>
 
             {/* Real-time Terminal Log Streamer Footprint */}
-            <div className="mt-space-md p-space-md rounded bg-surface-container text-left font-label-code text-label-code border border-surface-container-high">
-              <div className="flex items-center justify-between pb-2 mb-2 text-outline font-label-telemetry text-label-telemetry border-b border-surface-container-high/60">
+            <div className="mt-space-md p-space-md rounded bg-surface-container text-left font-label-code text-label-code">
+              <div className="flex items-center justify-between pb-2 mb-2 text-outline font-label-telemetry text-label-telemetry">
                 <span className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span> STREAMING ENGINE · WS CONNECTED
+                  <span className="w-2 h-2 rounded-full bg-secondary"></span> STREAMING ENGINE · WS CONNECTED
                 </span>
                 <span className="text-xs">BUFFER: 100 LINES</span>
               </div>
@@ -380,7 +380,7 @@ export function HomePage() {
       {/* =========================================================================
           SECTION 2: INTEGRATION ECOSYSTEM RIBBON
           ========================================================================= */}
-      <section className="w-full bg-surface-container-lowest py-space-lg px-gutter border-y border-surface-container-high shadow-sm">
+      <section className="w-full bg-surface-container-lowest py-space-lg px-gutter shadow-sm">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-lg">
           <div className="text-left">
             <span className="font-badge-caps text-badge-caps uppercase text-outline tracking-wider font-semibold">
@@ -432,10 +432,10 @@ export function HomePage() {
           </p>
         </div>
 
-        {/* 4 Cards Flow */}
+        {/* 4 Cards Flow (Pure tonal elevation - no white borders) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md text-left">
           {/* Step 1 */}
-          <div className="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group border border-surface-container-high">
+          <div className="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group">
             <div>
               <div className="w-10 h-10 rounded bg-primary/10 text-primary flex items-center justify-center font-label-mono-sm text-label-mono-sm font-label-code font-bold mb-space-md group-hover:bg-primary group-hover:text-on-primary transition-colors">
                 01
@@ -451,7 +451,7 @@ export function HomePage() {
           </div>
 
           {/* Step 2 */}
-          <div className="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group border border-surface-container-high">
+          <div className="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group">
             <div>
               <div className="w-10 h-10 rounded bg-secondary/10 text-secondary flex items-center justify-center font-label-mono-sm text-label-mono-sm font-label-code font-bold mb-space-md group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
                 02
@@ -467,7 +467,7 @@ export function HomePage() {
           </div>
 
           {/* Step 3 */}
-          <div className="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group border border-surface-container-high">
+          <div className="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group">
             <div>
               <div className="w-10 h-10 rounded bg-tertiary/10 text-tertiary flex items-center justify-center font-label-mono-sm text-label-mono-sm font-label-code font-bold mb-space-md group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
                 03
@@ -483,7 +483,7 @@ export function HomePage() {
           </div>
 
           {/* Step 4 */}
-          <div className="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group border border-surface-container-high">
+          <div className="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group">
             <div>
               <div className="w-10 h-10 rounded bg-primary-container/20 text-primary-container flex items-center justify-center font-label-mono-sm text-label-mono-sm font-label-code font-bold mb-space-md group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
                 04
@@ -503,7 +503,7 @@ export function HomePage() {
       {/* =========================================================================
           SECTION 4: COMPLETE 12-MODULE FEATURE SHOWCASE GRID
           ========================================================================= */}
-      <section className="w-full px-gutter py-16 bg-surface-container-lowest border-y border-surface-container-high shadow-inner">
+      <section className="w-full px-gutter py-16 bg-surface-container-lowest shadow-inner">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-space-md text-left">
             <div>
@@ -524,13 +524,13 @@ export function HomePage() {
             </div>
           </div>
 
-          {/* 12 Modules Bento Grid */}
+          {/* 12 Modules Bento Grid (No white borders) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md text-left">
             {modules.map((mod, idx) => (
               <Link
                 key={idx}
                 to={mod.path}
-                className="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group border border-surface-container-high"
+                className="p-space-lg rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-space-md">
@@ -610,9 +610,9 @@ export function HomePage() {
             </div>
           </div>
 
-          {/* Live Interactive Terminal Widget */}
-          <div className="lg:col-span-6 bg-surface-container-lowest rounded-xl shadow-2xl p-space-md md:p-space-lg overflow-hidden text-left border border-surface-container-high">
-            <div className="flex items-center justify-between pb-space-sm mb-space-sm border-b border-surface-container-high">
+          {/* Live Interactive Terminal Widget (No white borders - pure tonal depth) */}
+          <div className="lg:col-span-6 bg-surface-container-lowest rounded-xl shadow-2xl p-space-md md:p-space-lg overflow-hidden text-left">
+            <div className="flex items-center justify-between pb-space-sm mb-space-sm">
               <div className="flex items-center gap-space-xs">
                 <span className="w-3 h-3 rounded-full bg-error"></span>
                 <span className="w-3 h-3 rounded-full bg-tertiary-container"></span>
@@ -652,7 +652,7 @@ export function HomePage() {
                 <span className="text-secondary font-bold">$</span>
                 <span className="text-on-surface">omniops cluster status</span>
               </div>
-              <div className="text-on-surface-variant text-xs space-y-0.5 bg-surface-container p-2.5 rounded font-mono border border-surface-container-high">
+              <div className="text-on-surface-variant text-xs space-y-0.5 bg-surface-container p-2.5 rounded font-mono">
                 <p className="text-outline font-semibold">CLUSTER           STATUS    NODES   PODS    LOAD    REGION</p>
                 <p><span className="text-primary font-bold">prod-us-east-1</span>    HEALTHY   24      180     0.42    us-east-1</p>
                 <p><span className="text-primary font-bold">prod-eu-west-1</span>    HEALTHY   18      124     0.38    eu-west-1</p>
@@ -675,7 +675,7 @@ export function HomePage() {
       {/* =========================================================================
           SECTION 6: ENTERPRISE SECURITY & COMPLIANCE
           ========================================================================= */}
-      <section className="w-full bg-surface-container py-16 px-gutter border-y border-surface-container-high shadow-sm">
+      <section className="w-full bg-surface-container py-16 px-gutter shadow-sm">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="font-badge-caps text-badge-caps uppercase tracking-wider text-secondary font-semibold">
@@ -690,7 +690,7 @@ export function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md text-left">
-            <div className="p-space-md rounded-xl bg-surface-container-low shadow-sm border border-surface-container-high">
+            <div className="p-space-md rounded-xl bg-surface-container-low shadow-sm">
               <span className="material-symbols-outlined text-[28px] text-primary mb-2">verified_user</span>
               <h4 className="font-title-sm text-title-sm text-on-surface font-semibold">SOC2 Type II</h4>
               <p className="font-body-sm text-body-sm text-outline mt-1 leading-relaxed">
@@ -698,7 +698,7 @@ export function HomePage() {
               </p>
             </div>
 
-            <div className="p-space-md rounded-xl bg-surface-container-low shadow-sm border border-surface-container-high">
+            <div className="p-space-md rounded-xl bg-surface-container-low shadow-sm">
               <span className="material-symbols-outlined text-[28px] text-secondary mb-2">policy</span>
               <h4 className="font-title-sm text-title-sm text-on-surface font-semibold">ISO 27001</h4>
               <p className="font-body-sm text-body-sm text-outline mt-1 leading-relaxed">
@@ -706,7 +706,7 @@ export function HomePage() {
               </p>
             </div>
 
-            <div className="p-space-md rounded-xl bg-surface-container-low shadow-sm border border-surface-container-high">
+            <div className="p-space-md rounded-xl bg-surface-container-low shadow-sm">
               <span className="material-symbols-outlined text-[28px] text-tertiary mb-2">key</span>
               <h4 className="font-title-sm text-title-sm text-on-surface font-semibold">E2E Encryption</h4>
               <p className="font-body-sm text-body-sm text-outline mt-1 leading-relaxed">
@@ -714,7 +714,7 @@ export function HomePage() {
               </p>
             </div>
 
-            <div className="p-space-md rounded-xl bg-surface-container-low shadow-sm border border-surface-container-high">
+            <div className="p-space-md rounded-xl bg-surface-container-low shadow-sm">
               <span className="material-symbols-outlined text-[28px] text-primary mb-2">shield_person</span>
               <h4 className="font-title-sm text-title-sm text-on-surface font-semibold">Zero-Trust RBAC</h4>
               <p className="font-body-sm text-body-sm text-outline mt-1 leading-relaxed">
@@ -722,7 +722,7 @@ export function HomePage() {
               </p>
             </div>
 
-            <div className="p-space-md rounded-xl bg-surface-container-low shadow-sm border border-surface-container-high">
+            <div className="p-space-md rounded-xl bg-surface-container-low shadow-sm">
               <span className="material-symbols-outlined text-[28px] text-on-surface mb-2">history</span>
               <h4 className="font-title-sm text-title-sm text-on-surface font-semibold">Audit Trails</h4>
               <p className="font-body-sm text-body-sm text-outline mt-1 leading-relaxed">
@@ -756,7 +756,7 @@ export function HomePage() {
               <div
                 key={idx}
                 onClick={() => toggleFaq(idx)}
-                className="rounded-xl bg-surface-container p-space-md shadow-sm cursor-pointer transition-colors border border-surface-container-high hover:border-outline/50"
+                className="rounded-xl bg-surface-container p-space-md shadow-sm cursor-pointer transition-colors hover:bg-surface-container-high"
               >
                 <div className="flex items-center justify-between">
                   <h3 className="font-title-sm text-title-sm text-on-surface font-semibold">
@@ -781,7 +781,7 @@ export function HomePage() {
           SECTION 8: FINAL CALL TO ACTION BANNER
           ========================================================================= */}
       <section className="w-full px-gutter py-16 bg-gradient-to-b from-surface to-surface-container-lowest">
-        <div className="max-w-5xl mx-auto rounded-2xl bg-surface-container-high p-8 md:p-14 shadow-2xl relative overflow-hidden text-center border border-surface-container-highest">
+        <div className="max-w-5xl mx-auto rounded-2xl bg-surface-container-high p-8 md:p-14 shadow-2xl relative overflow-hidden text-center">
           <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/20 blur-3xl pointer-events-none rounded-full"></div>
           <div className="absolute -left-20 -top-20 w-80 h-80 bg-secondary/15 blur-3xl pointer-events-none rounded-full"></div>
 
@@ -804,7 +804,7 @@ export function HomePage() {
             </Link>
             <Link
               to="/pricing"
-              className="px-6 py-3.5 bg-surface-container hover:bg-surface-bright text-on-surface font-title-sm text-title-sm rounded font-medium transition-all border border-surface-container-highest"
+              className="px-6 py-3.5 bg-surface-container hover:bg-surface-bright text-on-surface font-title-sm text-title-sm rounded font-medium transition-all"
             >
               Book Architecture Review
             </Link>
